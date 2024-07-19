@@ -14,6 +14,7 @@
  *                GNU General Public License for more details.
  *
  *                                       6502  CORE 
+ *                              without decimal correction mode
  *
  *   This design is inspired by Wiki BREAKNES. I tried to replicate the design of the real 
  *	NMOS processor MOS 6502 as much as possible. The Logsim 6502 model was taken as the basis
@@ -32,7 +33,7 @@
 
 
 // MOS6502
-module MOS6502 (
+module MOS6502_WBCD (
    // Clocks                // Clock
    input Clk,               
    input PHI0,              // phase PHI0
@@ -1648,7 +1649,7 @@ reg [7:0]AI;                    // AI input latch
 reg [7:0]BI;                    // BI input latch
 reg LATCH_C7;                   // ALU overflow circuit latches
 reg LATCH_DC7;                  // ALU overflow circuit latches
-reg DAAL, DAAHR, DSAL, DSAHR;   // Decimal correction control latches  
+//reg DAAL, DAAHR, DSAL, DSAHR;   // Decimal correction control latches  
 // Combinatorics of logical operations
 wire [7:0]ANDo;                 // Logical AND
 wire [7:0]ORo;                  // Logical OR
@@ -1662,13 +1663,14 @@ wire [7:0]RESULT;               // ALU result bus
 assign RESULT[7:0] = ({8{ANDS}} & ANDo[7:0]) | ({8{ORS}} & ORo [7:0]) | ({8{EORS}} & XORo[7:0]) | ({8{SRS}} & {1'b0 ,ANDo[7:1]}) | ({8{SUMS}} & SUMo[7:0]);
 // Combinatorics of ALU overflow
 wire [7:0]CIN;	
-assign CIN[7:0] = { COUT[6:4], DCOUT3, COUT[2:0], ~nACIN };	
+assign CIN[7:0] = { COUT[6:0], ~nACIN };	// assign CIN[7:0] = { COUT[6:4], DCOUT3, COUT[2:0], ~nACIN };	
 wire [7:0]COUT;
 assign COUT[7:0] = ( CIN[7:0] & ORo[7:0] ) | ANDo[7:0] ;
 wire DCOUT3;
-assign DCOUT3 = COUT[3] & ~DC3;
-assign ACR = LATCH_C7 | LATCH_DC7;	        //	
-//BCD 
+//assign DCOUT3 = COUT[3] & ~DC3;
+assign ACR = LATCH_C7;	               //	ACR = LATCH_C7 | LATCH_DC7;
+//BCD
+/* 
 wire DAAH, DSAH;
 assign DAAH =    ACR & DAAHR;
 assign DSAH = ~( ACR | DSAHR );
@@ -1700,20 +1702,21 @@ assign f   = ~( ANDo[6] | XORo[7] );
 assign g   = ~( XORo[5] | XORo[6] | ANDo[5] | COUT[4] );
 assign DC3 = ~( nDAA | (( b | ~ORo[2]  ) & ( c | d )) );
 assign DC7 = ~( nDAA | (( e | ~XORo[6] ) & ( f | g )) );
+*/
 // Logics
 always @(posedge Clk) begin
             if (Z_ADD | SB_ADD )             AI[7:0] <= Z_ADD ? 8'h00 : SB[7:0];                   		
 		      if (DB_ADD | NDB_ADD | ADL_ADD ) BI[7:0] <= NDB_ADD ? ~DB[7:0] : ADL_ADD ? ADL[7:0] : DB[7:0]; 	                              																
-		      if (SB_AC)  ACC[7:0]  <= BCDRES[7:0];		     //		
+		      if (SB_AC)  ACC[7:0]  <= SB[7:0];	     //	if (SB_AC)  ACC[7:0]  <= BCDRES[7:0];	
 		               if (PHI2) begin
 		             ADD[7:0]  <= RESULT[7:0];
 				       LATCH_C7  <= COUT[7];
-					    LATCH_DC7 <= DC7;
+					    //LATCH_DC7 <= DC7;
 								 AVR <=  ( COUT[6] & ORo[7] ) | ( ~COUT[6] & ~ANDo[7] );
-		                 DAAL  <=  ( COUT[3] & ~nDAA );
-						     DAAHR <= ~nDAA;
-						     DSAL  <= ~( COUT[3] |  nDSA );
-						     DSAHR <=  nDSA;
+		                 //DAAL  <=  ( COUT[3] & ~nDAA );
+						     //DAAHR <= ~nDAA;
+						     //DSAL  <= ~( COUT[3] |  nDSA );
+						     //DSAHR <=  nDSA;
 		                         end
                       end
 // End of ALU module

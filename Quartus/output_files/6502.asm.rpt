@@ -1,5 +1,5 @@
 Assembler report for 6502
-Fri Jul 19 16:08:46 2024
+Sat Jul 20 01:28:20 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/altera/13.0sp1/BREAKS_6502/output_files/6502.sof
-  6. Assembler Device Options: C:/altera/13.0sp1/BREAKS_6502/output_files/6502.pof
+  5. Assembler Device Options: C:/altera/13.0sp1/6502_my/output_files/6502.sof
+  6. Assembler Device Options: C:/altera/13.0sp1/6502_my/output_files/6502.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jul 19 16:08:46 2024 ;
+; Assembler Status      ; Successful - Sat Jul 20 01:28:20 2024 ;
 ; Revision Name         ; 6502                                  ;
 ; Top-level Entity Name ; MOS6502                               ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------------------+
-; Assembler Generated Files                           ;
-+-----------------------------------------------------+
-; File Name                                           ;
-+-----------------------------------------------------+
-; C:/altera/13.0sp1/BREAKS_6502/output_files/6502.sof ;
-; C:/altera/13.0sp1/BREAKS_6502/output_files/6502.pof ;
-+-----------------------------------------------------+
++-------------------------------------------------+
+; Assembler Generated Files                       ;
++-------------------------------------------------+
+; File Name                                       ;
++-------------------------------------------------+
+; C:/altera/13.0sp1/6502_my/output_files/6502.sof ;
+; C:/altera/13.0sp1/6502_my/output_files/6502.pof ;
++-------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Assembler Device Options: C:/altera/13.0sp1/BREAKS_6502/output_files/6502.sof ;
-+----------------+--------------------------------------------------------------+
-; Option         ; Setting                                                      ;
-+----------------+--------------------------------------------------------------+
-; Device         ; EP2C5T144C8                                                  ;
-; JTAG usercode  ; 0x000E9ED8                                                   ;
-; Checksum       ; 0x000E9ED8                                                   ;
-+----------------+--------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Assembler Device Options: C:/altera/13.0sp1/6502_my/output_files/6502.sof ;
++----------------+----------------------------------------------------------+
+; Option         ; Setting                                                  ;
++----------------+----------------------------------------------------------+
+; Device         ; EP2C5T144C8                                              ;
+; JTAG usercode  ; 0x000F19EF                                               ;
+; Checksum       ; 0x000F19EF                                               ;
++----------------+----------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Assembler Device Options: C:/altera/13.0sp1/BREAKS_6502/output_files/6502.pof ;
-+--------------------+----------------------------------------------------------+
-; Option             ; Setting                                                  ;
-+--------------------+----------------------------------------------------------+
-; Device             ; EPCS4                                                    ;
-; JTAG usercode      ; 0x00000000                                               ;
-; Checksum           ; 0x07447AA7                                               ;
-; Compression Ratio  ; 2                                                        ;
-+--------------------+----------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Assembler Device Options: C:/altera/13.0sp1/6502_my/output_files/6502.pof ;
++--------------------+------------------------------------------------------+
+; Option             ; Setting                                              ;
++--------------------+------------------------------------------------------+
+; Device             ; EPCS4                                                ;
+; JTAG usercode      ; 0x00000000                                           ;
+; Checksum           ; 0x074551BA                                           ;
+; Compression Ratio  ; 2                                                    ;
++--------------------+------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul 19 16:08:45 2024
+    Info: Processing started: Sat Jul 20 01:28:20 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off 6502 -c 6502
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 408 megabytes
-    Info: Processing ended: Fri Jul 19 16:08:46 2024
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4544 megabytes
+    Info: Processing ended: Sat Jul 20 01:28:20 2024
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

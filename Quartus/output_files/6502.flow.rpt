@@ -1,5 +1,5 @@
 Flow report for 6502
-Fri Jul 19 16:08:47 2024
+Sat Jul 20 01:28:22 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Fri Jul 19 16:08:46 2024           ;
+; Flow Status                        ; Successful - Sat Jul 20 01:28:20 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; 6502                                            ;
 ; Top-level Entity Name              ; MOS6502                                         ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C5T144C8                                     ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 641 / 4,608 ( 14 % )                            ;
-;     Total combinational functions  ; 612 / 4,608 ( 13 % )                            ;
-;     Dedicated logic registers      ; 285 / 4,608 ( 6 % )                             ;
-; Total registers                    ; 285                                             ;
+; Total logic elements               ; 663 / 4,608 ( 14 % )                            ;
+;     Total combinational functions  ; 636 / 4,608 ( 14 % )                            ;
+;     Dedicated logic registers      ; 287 / 4,608 ( 6 % )                             ;
+; Total registers                    ; 287                                             ;
 ; Total pins                         ; 43 / 89 ( 48 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/19/2024 16:08:36 ;
+; Start date & time ; 07/20/2024 01:28:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 6502                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+--------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id   ;
 +-------------------------------------+---------------------------------------+---------------+-------------+--------------+
-; COMPILER_SIGNATURE_ID               ; 1097931546342.172139451608140         ; --            ; --          ; --           ;
+; COMPILER_SIGNATURE_ID               ; 48633807480252.172142809309584        ; --            ; --          ; --           ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --           ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --           ;
 ; OUTPUT_PIN_LOAD                     ; 6                                     ; --            ; --          ; 3.3-V LVTTL  ;
@@ -97,11 +97,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 434 MB              ; 00:00:04                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 589 MB              ; 00:00:04                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 408 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 405 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:10                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4589 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:03     ; 1.0                     ; 4803 MB             ; 00:00:03                           ;
+; Assembler                 ; 00:00:00     ; 1.0                     ; 4544 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4540 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:08                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -110,10 +110,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; A_N_D            ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; A_N_D            ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; A_N_D            ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; A_N_D            ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; AND-PCBOOK       ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; AND-PCBOOK       ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; AND-PCBOOK       ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; AND-PCBOOK       ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
