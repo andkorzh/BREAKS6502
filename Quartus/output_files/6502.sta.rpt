@@ -1,0 +1,1533 @@
+TimeQuest Timing Analyzer report for 6502
+Fri Jul 19 16:08:48 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'Clk'
+ 13. Slow Model Hold: 'Clk'
+ 14. Slow Model Minimum Pulse Width: 'Clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Propagation Delay
+ 20. Minimum Propagation Delay
+ 21. Output Enable Times
+ 22. Minimum Output Enable Times
+ 23. Output Disable Times
+ 24. Minimum Output Disable Times
+ 25. Fast Model Setup Summary
+ 26. Fast Model Hold Summary
+ 27. Fast Model Recovery Summary
+ 28. Fast Model Removal Summary
+ 29. Fast Model Minimum Pulse Width Summary
+ 30. Fast Model Setup: 'Clk'
+ 31. Fast Model Hold: 'Clk'
+ 32. Fast Model Minimum Pulse Width: 'Clk'
+ 33. Setup Times
+ 34. Hold Times
+ 35. Clock to Output Times
+ 36. Minimum Clock to Output Times
+ 37. Propagation Delay
+ 38. Minimum Propagation Delay
+ 39. Output Enable Times
+ 40. Minimum Output Enable Times
+ 41. Output Disable Times
+ 42. Minimum Output Disable Times
+ 43. Multicorner Timing Analysis Summary
+ 44. Setup Times
+ 45. Hold Times
+ 46. Clock to Output Times
+ 47. Minimum Clock to Output Times
+ 48. Progagation Delay
+ 49. Minimum Progagation Delay
+ 50. Setup Transfers
+ 51. Hold Transfers
+ 52. Report TCCS
+ 53. Report RSKM
+ 54. Unconstrained Paths
+ 55. TimeQuest Timing Analyzer Messages
+ 56. TimeQuest Timing Analyzer Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; 6502                                                              ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------+
+; SDC File List                                       ;
++-----------------+--------+--------------------------+
+; SDC File Path   ; Status ; Read at                  ;
++-----------------+--------+--------------------------+
+; MOS6502.out.sdc ; OK     ; Fri Jul 19 16:08:47 2024 ;
++-----------------+--------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                         ;
++------------+------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clk        ; Base ; 56.387 ; 17.73 MHz ; 0.000 ; 5.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clk } ;
++------------+------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 66.02 MHz ; 66.02 MHz       ; Clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clk   ; 41.241 ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; Clk   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; Clk   ; 3.758 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Clk'                                                                                                                                                                                 ;
++--------+-------------------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                         ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 41.241 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; -0.001     ; 15.185     ;
+; 41.364 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; -0.001     ; 15.062     ;
+; 41.642 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 14.791     ;
+; 41.697 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 14.716     ;
+; 41.829 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 14.584     ;
+; 41.876 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 14.539     ;
+; 41.889 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 14.544     ;
+; 41.918 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.011      ; 14.520     ;
+; 41.922 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.002      ; 14.507     ;
+; 42.043 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 14.370     ;
+; 42.107 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 14.313     ;
+; 42.211 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 14.204     ;
+; 42.227 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 14.186     ;
+; 42.247 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; -0.007     ; 14.173     ;
+; 42.257 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.002      ; 14.172     ;
+; 42.331 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.005      ; 14.101     ;
+; 42.350 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 14.063     ;
+; 42.354 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 14.066     ;
+; 42.370 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; -0.007     ; 14.050     ;
+; 42.378 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 14.035     ;
+; 42.413 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 14.000     ;
+; 42.541 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 13.874     ;
+; 42.625 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 13.797     ;
+; 42.628 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 13.792     ;
+; 42.648 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 13.779     ;
+; 42.664 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 13.751     ;
+; 42.666 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.766     ;
+; 42.671 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.009      ; 13.765     ;
+; 42.683 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; -0.001     ; 13.743     ;
+; 42.690 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 13.725     ;
+; 42.748 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 13.665     ;
+; 42.753 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.679     ;
+; 42.791 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[2]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 13.622     ;
+; 42.793 ; Y_REG[6]                                                          ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.011      ; 13.645     ;
+; 42.815 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; -0.001     ; 13.611     ;
+; 42.822 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 13.593     ;
+; 42.839 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.023     ; 13.565     ;
+; 42.872 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 13.550     ;
+; 42.875 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 13.545     ;
+; 42.876 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.556     ;
+; 42.882 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; S_REG_LATCH1[4]                                      ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.550     ;
+; 42.885 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.547     ;
+; 42.895 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 13.532     ;
+; 42.904 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.002     ; 13.521     ;
+; 42.918 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.009      ; 13.518     ;
+; 42.924 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.508     ;
+; 42.942 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 13.480     ;
+; 42.962 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.023     ; 13.442     ;
+; 43.008 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.424     ;
+; 43.046 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; S_REG_LATCH1[3]                                      ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.386     ;
+; 43.078 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.002     ; 13.347     ;
+; 43.080 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.012      ; 13.359     ;
+; 43.093 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 13.340     ;
+; 43.100 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 13.322     ;
+; 43.126 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[2]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 13.287     ;
+; 43.154 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.012      ; 13.285     ;
+; 43.162 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 13.258     ;
+; 43.178 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; S_REG_LATCH1[3]                                      ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.254     ;
+; 43.189 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 13.233     ;
+; 43.217 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; S_REG_LATCH1[4]                                      ; Clk          ; Clk         ; 56.387       ; 0.005      ; 13.215     ;
+; 43.218 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; 0.000      ; 13.209     ;
+; 43.223 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 13.197     ;
+; 43.229 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; 0.000      ; 13.198     ;
+; 43.237 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|ACC[2]                                   ; Clk          ; Clk         ; 56.387       ; 0.006      ; 13.196     ;
+; 43.240 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.016     ; 13.171     ;
+; 43.275 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.014      ; 13.166     ;
+; 43.276 ; X_REG[0]                                                          ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.016      ; 13.167     ;
+; 43.286 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.012      ; 13.153     ;
+; 43.287 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[7]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 13.128     ;
+; 43.327 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.012      ; 13.112     ;
+; 43.340 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 13.093     ;
+; 43.347 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 13.075     ;
+; 43.401 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.012      ; 13.038     ;
+; 43.409 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 13.011     ;
+; 43.420 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.002     ; 13.005     ;
+; 43.430 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.017      ; 13.014     ;
+; 43.456 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; S_REG_LATCH1[3]                                      ; Clk          ; Clk         ; 56.387       ; 0.012      ; 12.983     ;
+; 43.465 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[2]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 12.950     ;
+; 43.466 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 12.954     ;
+; 43.474 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[7]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 12.939     ;
+; 43.474 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; Y_REG[7]                                             ; Clk          ; Clk         ; 56.387       ; -0.022     ; 12.931     ;
+; 43.487 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.016     ; 12.924     ;
+; 43.516 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.011     ; 12.900     ;
+; 43.533 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.012      ; 12.906     ;
+; 43.562 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.017      ; 12.882     ;
+; 43.563 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.012     ; 12.852     ;
+; 43.572 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|ACC[2]                                   ; Clk          ; Clk         ; 56.387       ; 0.006      ; 12.861     ;
+; 43.623 ; X_REG[7]                                                          ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; -0.006     ; 12.798     ;
+; 43.631 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; S_REG_LATCH1[4]                                      ; Clk          ; Clk         ; 56.387       ; 0.012      ; 12.808     ;
+; 43.647 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[7]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 12.775     ;
+; 43.648 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[6]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 12.765     ;
+; 43.666 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[6]                                    ; Clk          ; Clk         ; 56.387       ; -0.014     ; 12.747     ;
+; 43.668 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|ACC[1]                                   ; Clk          ; Clk         ; 56.387       ; 0.006      ; 12.765     ;
+; 43.684 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.017      ; 12.760     ;
+; 43.698 ; Y_REG[6]                                                          ; ALU:MOD_ALU|BI[6]                                    ; Clk          ; Clk         ; 56.387       ; -0.002     ; 12.727     ;
+; 43.702 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|S_SB  ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.002     ; 12.723     ;
+; 43.703 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; S_REG_LATCH1[3]                                      ; Clk          ; Clk         ; 56.387       ; 0.012      ; 12.736     ;
+; 43.706 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|S_SB  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.011      ; 12.732     ;
+; 43.728 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; X_REG[3]                                             ; Clk          ; Clk         ; 56.387       ; 0.002      ; 12.701     ;
+; 43.741 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nV_OUT ; Clk          ; Clk         ; 56.387       ; -0.011     ; 12.675     ;
++--------+-------------------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Clk'                                                                                                                                                                                                                              ;
++-------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                         ; To Node                                                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK6LATCH1  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK6LATCH1  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.730 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|NMIPLATCH   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.036      ;
+; 0.734 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ANDS1                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ANDS                        ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.040      ;
+; 0.742 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|RDYDELAY2                     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|BRLATCH2                      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.746 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK5LATCH   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|ADH_ABHR                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.052      ;
+; 0.747 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|PC_SETUP:MOD_PC_SETUP|PCL_DBR1                      ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|PC_SETUP:MOD_PC_SETUP|PCL_DBR                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.747 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH2                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH3                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.747 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH2     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH1     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.748 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|N_LATCH2                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nN_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.748 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW2                               ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.749 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|I_LATCH1                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|I_LATCH2                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.749 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|ARC_CR                              ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|DBZ_ZR                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.749 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH2     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC1                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.749 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH3                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|VSET                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.749 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|BRLATCH2                      ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC2                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.753 ; RESPR1                                                                            ; RESPR2                                                                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.755 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH1                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH2                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.755 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH1                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH2                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.756 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA1                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA                        ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.757 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRESXLATCH2                   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRES2LATCH                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.063      ;
+; 0.759 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|FETCHLATCH                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.759 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1XLATCH                      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.761 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|DONMILATCH  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.762 ; RESPR2                                                                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS2LATCH                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.068      ;
+; 0.766 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.769 ; RESPR2                                                                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRESXLATCH2                   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.769 ; RESPR2                                                                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.772 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[1]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[2]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.078      ;
+; 0.773 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS2LATCH                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.079      ;
+; 0.776 ; PC:MOD_PC|PCLS[7]                                                                 ; PC:MOD_PC|PCL[7]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.779 ; PC:MOD_PC|PCLS[1]                                                                 ; PC:MOD_PC|PCL[1]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.085      ;
+; 0.780 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW2                               ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.086      ;
+; 0.782 ; PC:MOD_PC|PCLS[1]                                                                 ; PC:MOD_PC|PCL[3]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.088      ;
+; 0.783 ; PC:MOD_PC|PCLS[1]                                                                 ; PC:MOD_PC|PCL[2]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.089      ;
+; 0.791 ; ALU:MOD_ALU|AI[0]                                                                 ; ALU:MOD_ALU|ADD[0]                                                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.867 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|Z_V                                 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nV_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.173      ;
+; 0.881 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[2]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[2]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.187      ;
+; 0.887 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[0]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[0]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.193      ;
+; 0.900 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL_LATCH1                   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL2                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.206      ;
+; 0.907 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nN_OUT                              ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|N_LATCH2                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.213      ;
+; 0.909 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT                              ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|Z_LATCH2                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.215      ;
+; 0.912 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA                        ; ALU:MOD_ALU|DSAHR                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.218      ;
+; 0.912 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH2                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.218      ;
+; 0.919 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS1LATCH                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRESXLATCH2                   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.225      ;
+; 0.920 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL2                         ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL_LATCH1                   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.226      ;
+; 0.920 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T67                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T61                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.226      ;
+; 0.920 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS1LATCH                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.226      ;
+; 0.921 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T71                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T7                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.227      ;
+; 0.922 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|DELAYLATCH2 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.228      ;
+; 0.922 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[3]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[3]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.228      ;
+; 0.924 ; PC:MOD_PC|PCL[6]                                                                  ; PC:MOD_PC|PCLS[6]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.230      ;
+; 0.924 ; PC:MOD_PC|PCLS[6]                                                                 ; PC:MOD_PC|PCL[6]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.230      ;
+; 0.925 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|COUT_LATCH                  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.231      ;
+; 0.930 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA                        ; ALU:MOD_ALU|DSAL                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.236      ;
+; 0.932 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7                     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.238      ;
+; 0.938 ; PC:MOD_PC|PCLS[3]                                                                 ; PC:MOD_PC|PCL[3]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.244      ;
+; 1.045 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH2                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.351      ;
+; 1.050 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|WRLATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|nREADY2                       ; Clk          ; Clk         ; 0.000        ; -0.001     ; 1.355      ;
+; 1.062 ; nIRQP                                                                             ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH2     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.368      ;
+; 1.065 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|D_LATCH2                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.371      ;
+; 1.067 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|V_LATCH2                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nV_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.373      ;
+; 1.102 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH1                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|VSET                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.408      ;
+; 1.104 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC1                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.410      ;
+; 1.105 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|Z_ADL2      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.411      ;
+; 1.105 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|nREADY2                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.411      ;
+; 1.106 ; PC:MOD_PC|PCHS[3]                                                                 ; PC:MOD_PC|PCH[3]                                                                  ; Clk          ; Clk         ; 0.000        ; -0.002     ; 1.410      ;
+; 1.107 ; PC:MOD_PC|PCHS[3]                                                                 ; PC:MOD_PC|PCH[4]                                                                  ; Clk          ; Clk         ; 0.000        ; -0.002     ; 1.411      ;
+; 1.116 ; PC:MOD_PC|PCHS[2]                                                                 ; PC:MOD_PC|PCH[2]                                                                  ; Clk          ; Clk         ; 0.000        ; -0.002     ; 1.420      ;
+; 1.122 ; S_REG_LATCH1[3]                                                                   ; S_REG[3]                                                                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.428      ;
+; 1.127 ; PREDECODE_IR:MOD_PREDECODE_IR|IR[5]                                               ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|AVR_LATCH                           ; Clk          ; Clk         ; 0.000        ; 0.002      ; 1.435      ;
+; 1.166 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ACIN3                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.166 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC2                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.170 ; PC:MOD_PC|PCL[4]                                                                  ; PC:MOD_PC|PCLS[4]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.476      ;
+; 1.170 ; PC:MOD_PC|PCH[3]                                                                  ; PC:MOD_PC|PCHS[3]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.002      ; 1.478      ;
+; 1.171 ; PC:MOD_PC|PCLS[0]                                                                 ; PC:MOD_PC|PCL[0]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.477      ;
+; 1.172 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|DELAYLATCH2 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.173 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T62                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T61                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.479      ;
+; 1.174 ; PC:MOD_PC|PCL[7]                                                                  ; PC:MOD_PC|PCLS[7]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.480      ;
+; 1.175 ; PC:MOD_PC|PCL[5]                                                                  ; PC:MOD_PC|PCLS[5]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.481      ;
+; 1.176 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH2                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.482      ;
+; 1.181 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1XLATCH                      ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.487      ;
+; 1.185 ; PC:MOD_PC|PCL[0]                                                                  ; PC:MOD_PC|PCLS[0]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.192 ; PC:MOD_PC|PCL[3]                                                                  ; PC:MOD_PC|PCLS[3]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.192 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK6LATCH1  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK7LATCH   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.192 ; PC:MOD_PC|PCLS[2]                                                                 ; PC:MOD_PC|PCL[3]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.192 ; PC:MOD_PC|PCLS[2]                                                                 ; PC:MOD_PC|PCL[2]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.498      ;
+; 1.194 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|RDYDELAY1                     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|PC_SETUP:MOD_PC_SETUP|ADL_PCLR                      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.500      ;
+; 1.197 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T7                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|ADL_ABLR                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.198 ; PC:MOD_PC|PCLS[5]                                                                 ; PC:MOD_PC|PCL[6]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.504      ;
+; 1.199 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|Z_ADL1      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.505      ;
+; 1.199 ; PC:MOD_PC|PCLS[5]                                                                 ; PC:MOD_PC|PCL[5]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.505      ;
+; 1.202 ; PC:MOD_PC|PCLS[7]                                                                 ; PC:MOD_PC|PCH[0]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.508      ;
+; 1.203 ; PC:MOD_PC|PCLS[7]                                                                 ; PC:MOD_PC|PCH[1]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.509      ;
+; 1.205 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[1]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[1]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.511      ;
+; 1.212 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT                              ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|D_LATCH2                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.518      ;
+; 1.212 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS1LATCH                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 1.518      ;
++-------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Clk'                                                                                     ;
++-------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                    ;
++-------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[0]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[1]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[2]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[3]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[4]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[5]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[6]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[7]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[0]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[1]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[2]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[3]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[4]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[5]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[6]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[7]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[0]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[1]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[2]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[3]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[4]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[5]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[6]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[7]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[0]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[1]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[2]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[3]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[4]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[5]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[6]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[7]                        ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[0]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[1]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[2]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[3]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[4]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[5]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[6]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[7]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AVR                           ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[0]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[1]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[2]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[3]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[4]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[5]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[6]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[7]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DAAHR                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DAAL                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DSAHR                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DSAL                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|LATCH_C7                      ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|LATCH_DC7                     ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[0]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[1]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[2]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[3]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[4]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[5]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[6]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[7]                               ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[0]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[1]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[2]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[3]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[4]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[5]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[6]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[7]                              ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[0] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[1] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[2] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[3] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[0] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[1] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[2] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[3] ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[0]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[1]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[2]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[3]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[4]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[5]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[6]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[7]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[0]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[1]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[2]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[3]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[4]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[5]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[6]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[7]                          ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[0]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[1]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[2]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[3]                         ;
+; 3.758 ; 5.000        ; 1.242          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[4]                         ;
++-------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clk        ; 5.420  ; 5.420  ; Rise       ; Clk             ;
+;  DIN[0]   ; Clk        ; 4.931  ; 4.931  ; Rise       ; Clk             ;
+;  DIN[1]   ; Clk        ; 4.724  ; 4.724  ; Rise       ; Clk             ;
+;  DIN[2]   ; Clk        ; 5.420  ; 5.420  ; Rise       ; Clk             ;
+;  DIN[3]   ; Clk        ; 4.894  ; 4.894  ; Rise       ; Clk             ;
+;  DIN[4]   ; Clk        ; 4.916  ; 4.916  ; Rise       ; Clk             ;
+;  DIN[5]   ; Clk        ; 0.296  ; 0.296  ; Rise       ; Clk             ;
+;  DIN[6]   ; Clk        ; 0.729  ; 0.729  ; Rise       ; Clk             ;
+;  DIN[7]   ; Clk        ; 0.577  ; 0.577  ; Rise       ; Clk             ;
+; PHI0      ; Clk        ; 18.219 ; 18.219 ; Rise       ; Clk             ;
+; RDY       ; Clk        ; 4.758  ; 4.758  ; Rise       ; Clk             ;
+; SO        ; Clk        ; 4.585  ; 4.585  ; Rise       ; Clk             ;
+; nIRQ      ; Clk        ; 4.865  ; 4.865  ; Rise       ; Clk             ;
+; nNMI      ; Clk        ; 4.207  ; 4.207  ; Rise       ; Clk             ;
+; nRES      ; Clk        ; 0.235  ; 0.235  ; Rise       ; Clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clk        ; -0.030 ; -0.030 ; Rise       ; Clk             ;
+;  DIN[0]   ; Clk        ; -4.665 ; -4.665 ; Rise       ; Clk             ;
+;  DIN[1]   ; Clk        ; -4.458 ; -4.458 ; Rise       ; Clk             ;
+;  DIN[2]   ; Clk        ; -5.154 ; -5.154 ; Rise       ; Clk             ;
+;  DIN[3]   ; Clk        ; -4.628 ; -4.628 ; Rise       ; Clk             ;
+;  DIN[4]   ; Clk        ; -4.650 ; -4.650 ; Rise       ; Clk             ;
+;  DIN[5]   ; Clk        ; -0.030 ; -0.030 ; Rise       ; Clk             ;
+;  DIN[6]   ; Clk        ; -0.463 ; -0.463 ; Rise       ; Clk             ;
+;  DIN[7]   ; Clk        ; -0.311 ; -0.311 ; Rise       ; Clk             ;
+; PHI0      ; Clk        ; -5.042 ; -5.042 ; Rise       ; Clk             ;
+; RDY       ; Clk        ; -4.475 ; -4.475 ; Rise       ; Clk             ;
+; SO        ; Clk        ; -4.319 ; -4.319 ; Rise       ; Clk             ;
+; nIRQ      ; Clk        ; -4.599 ; -4.599 ; Rise       ; Clk             ;
+; nNMI      ; Clk        ; -3.941 ; -3.941 ; Rise       ; Clk             ;
+; nRES      ; Clk        ; 0.031  ; 0.031  ; Rise       ; Clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; Clk        ; 8.886 ; 8.886 ; Rise       ; Clk             ;
+;  A[0]     ; Clk        ; 8.509 ; 8.509 ; Rise       ; Clk             ;
+;  A[1]     ; Clk        ; 8.529 ; 8.529 ; Rise       ; Clk             ;
+;  A[2]     ; Clk        ; 8.848 ; 8.848 ; Rise       ; Clk             ;
+;  A[3]     ; Clk        ; 7.829 ; 7.829 ; Rise       ; Clk             ;
+;  A[4]     ; Clk        ; 8.740 ; 8.740 ; Rise       ; Clk             ;
+;  A[5]     ; Clk        ; 8.563 ; 8.563 ; Rise       ; Clk             ;
+;  A[6]     ; Clk        ; 8.553 ; 8.553 ; Rise       ; Clk             ;
+;  A[7]     ; Clk        ; 8.538 ; 8.538 ; Rise       ; Clk             ;
+;  A[8]     ; Clk        ; 8.554 ; 8.554 ; Rise       ; Clk             ;
+;  A[9]     ; Clk        ; 8.886 ; 8.886 ; Rise       ; Clk             ;
+;  A[10]    ; Clk        ; 8.322 ; 8.322 ; Rise       ; Clk             ;
+;  A[11]    ; Clk        ; 8.230 ; 8.230 ; Rise       ; Clk             ;
+;  A[12]    ; Clk        ; 8.210 ; 8.210 ; Rise       ; Clk             ;
+;  A[13]    ; Clk        ; 8.430 ; 8.430 ; Rise       ; Clk             ;
+;  A[14]    ; Clk        ; 8.588 ; 8.588 ; Rise       ; Clk             ;
+;  A[15]    ; Clk        ; 8.557 ; 8.557 ; Rise       ; Clk             ;
+; DOUT[*]   ; Clk        ; 8.372 ; 8.372 ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 8.161 ; 8.161 ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 8.179 ; 8.179 ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 8.183 ; 8.183 ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 8.334 ; 8.334 ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 8.371 ; 8.371 ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 8.251 ; 8.251 ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 8.240 ; 8.240 ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 8.372 ; 8.372 ; Rise       ; Clk             ;
+; RW        ; Clk        ; 9.463 ; 9.463 ; Rise       ; Clk             ;
+; SYNC      ; Clk        ; 8.177 ; 8.177 ; Rise       ; Clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; Clk        ; 7.829 ; 7.829 ; Rise       ; Clk             ;
+;  A[0]     ; Clk        ; 8.509 ; 8.509 ; Rise       ; Clk             ;
+;  A[1]     ; Clk        ; 8.529 ; 8.529 ; Rise       ; Clk             ;
+;  A[2]     ; Clk        ; 8.848 ; 8.848 ; Rise       ; Clk             ;
+;  A[3]     ; Clk        ; 7.829 ; 7.829 ; Rise       ; Clk             ;
+;  A[4]     ; Clk        ; 8.740 ; 8.740 ; Rise       ; Clk             ;
+;  A[5]     ; Clk        ; 8.563 ; 8.563 ; Rise       ; Clk             ;
+;  A[6]     ; Clk        ; 8.553 ; 8.553 ; Rise       ; Clk             ;
+;  A[7]     ; Clk        ; 8.538 ; 8.538 ; Rise       ; Clk             ;
+;  A[8]     ; Clk        ; 8.554 ; 8.554 ; Rise       ; Clk             ;
+;  A[9]     ; Clk        ; 8.886 ; 8.886 ; Rise       ; Clk             ;
+;  A[10]    ; Clk        ; 8.322 ; 8.322 ; Rise       ; Clk             ;
+;  A[11]    ; Clk        ; 8.230 ; 8.230 ; Rise       ; Clk             ;
+;  A[12]    ; Clk        ; 8.210 ; 8.210 ; Rise       ; Clk             ;
+;  A[13]    ; Clk        ; 8.430 ; 8.430 ; Rise       ; Clk             ;
+;  A[14]    ; Clk        ; 8.588 ; 8.588 ; Rise       ; Clk             ;
+;  A[15]    ; Clk        ; 8.557 ; 8.557 ; Rise       ; Clk             ;
+; DOUT[*]   ; Clk        ; 8.161 ; 8.161 ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 8.161 ; 8.161 ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 8.179 ; 8.179 ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 8.183 ; 8.183 ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 8.334 ; 8.334 ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 8.371 ; 8.371 ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 8.251 ; 8.251 ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 8.240 ; 8.240 ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 8.372 ; 8.372 ; Rise       ; Clk             ;
+; RW        ; Clk        ; 9.463 ; 9.463 ; Rise       ; Clk             ;
+; SYNC      ; Clk        ; 8.177 ; 8.177 ; Rise       ; Clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; PHI0       ; PHI1        ;        ; 10.539 ; 10.539 ;        ;
+; PHI0       ; PHI2        ; 10.512 ;        ;        ; 10.512 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; PHI0       ; PHI1        ;        ; 10.539 ; 10.539 ;        ;
+; PHI0       ; PHI2        ; 10.512 ;        ;        ; 10.512 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------------------+
+; Output Enable Times                                                  ;
++-----------+------------+-------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 8.208 ;      ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 8.208 ;      ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 9.264 ;      ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 9.190 ;      ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 9.119 ;      ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 9.128 ;      ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 9.119 ;      ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 8.208 ;      ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 8.700 ;      ; Rise       ; Clk             ;
++-----------+------------+-------+------+------------+-----------------+
+
+
++----------------------------------------------------------------------+
+; Minimum Output Enable Times                                          ;
++-----------+------------+-------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 8.208 ;      ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 8.208 ;      ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 9.264 ;      ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 9.190 ;      ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 9.119 ;      ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 9.128 ;      ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 9.119 ;      ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 8.208 ;      ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 8.700 ;      ; Rise       ; Clk             ;
++-----------+------------+-------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 8.208     ;           ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 8.208     ;           ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 9.264     ;           ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 9.190     ;           ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 9.119     ;           ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 9.128     ;           ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 9.119     ;           ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 8.208     ;           ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 8.700     ;           ; Rise       ; Clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 8.208     ;           ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 8.208     ;           ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 9.264     ;           ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 9.190     ;           ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 9.119     ;           ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 9.128     ;           ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 9.119     ;           ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 8.208     ;           ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 8.700     ;           ; Rise       ; Clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; Clk   ; 51.643 ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; Clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; Clk   ; 4.000 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Clk'                                                                                                                                                                                 ;
++--------+-------------------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                         ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 51.643 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 4.776      ;
+; 51.724 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 4.695      ;
+; 51.753 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 4.672      ;
+; 51.810 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.596      ;
+; 51.813 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.601      ;
+; 51.829 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.004      ; 4.594      ;
+; 51.843 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.010      ; 4.586      ;
+; 51.857 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.549      ;
+; 51.881 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 4.544      ;
+; 51.886 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.526      ;
+; 51.925 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.489      ;
+; 51.941 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.004      ; 4.482      ;
+; 51.952 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.454      ;
+; 51.960 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.466      ;
+; 51.986 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.420      ;
+; 52.007 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.399      ;
+; 52.009 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; 0.001      ; 4.411      ;
+; 52.014 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.398      ;
+; 52.025 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.010      ; 4.404      ;
+; 52.039 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; -0.006     ; 4.374      ;
+; 52.064 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.342      ;
+; 52.072 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.354      ;
+; 52.077 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.337      ;
+; 52.088 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.318      ;
+; 52.092 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.334      ;
+; 52.098 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.308      ;
+; 52.117 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.295      ;
+; 52.120 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; -0.006     ; 4.293      ;
+; 52.124 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[2]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.282      ;
+; 52.131 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.295      ;
+; 52.137 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; 0.001      ; 4.283      ;
+; 52.143 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.015     ; 4.261      ;
+; 52.149 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 4.270      ;
+; 52.153 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.010      ; 4.276      ;
+; 52.156 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.276      ;
+; 52.158 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.256      ;
+; 52.167 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; S_REG_LATCH1[4]                                      ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.259      ;
+; 52.173 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.253      ;
+; 52.178 ; Y_REG[6]                                                          ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.005      ; 4.246      ;
+; 52.182 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.230      ;
+; 52.187 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; 0.001      ; 4.233      ;
+; 52.190 ; X_REG[7]                                                          ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.222      ;
+; 52.202 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.230      ;
+; 52.204 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.011     ; 4.204      ;
+; 52.207 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.003     ; 4.209      ;
+; 52.207 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|BI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.003     ; 4.209      ;
+; 52.209 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 4.210      ;
+; 52.212 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.214      ;
+; 52.215 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|AI[4]                                    ; Clk          ; Clk         ; 56.387       ; 0.005      ; 4.209      ;
+; 52.224 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.015     ; 4.180      ;
+; 52.231 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; X_REG[4]                                             ; Clk          ; Clk         ; 56.387       ; 0.014      ; 4.202      ;
+; 52.236 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[2]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.170      ;
+; 52.239 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; 0.004      ; 4.184      ;
+; 52.241 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.191      ;
+; 52.245 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[0]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.167      ;
+; 52.251 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.011     ; 4.157      ;
+; 52.253 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.009     ; 4.157      ;
+; 52.256 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 4.163      ;
+; 52.273 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.139      ;
+; 52.277 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT ; Clk          ; Clk         ; 56.387       ; 0.000      ; 4.142      ;
+; 52.277 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; 0.005      ; 4.147      ;
+; 52.279 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; S_REG_LATCH1[4]                                      ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.147      ;
+; 52.280 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.134      ;
+; 52.284 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.148      ;
+; 52.285 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 4.140      ;
+; 52.287 ; X_REG[0]                                                          ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.015      ; 4.147      ;
+; 52.288 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; S_REG_LATCH1[3]                                      ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.138      ;
+; 52.292 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.017      ; 4.144      ;
+; 52.310 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.102      ;
+; 52.315 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|AI[0]                                    ; Clk          ; Clk         ; 56.387       ; 0.001      ; 4.105      ;
+; 52.330 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|ACC[0]                                   ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.102      ;
+; 52.331 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.017      ; 4.105      ;
+; 52.335 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; S_REG_LATCH1[3]                                      ; Clk          ; Clk         ; 56.387       ; 0.007      ; 4.091      ;
+; 52.343 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.071      ;
+; 52.345 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.003     ; 4.071      ;
+; 52.347 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; Y_REG[7]                                             ; Clk          ; Clk         ; 56.387       ; -0.015     ; 4.057      ;
+; 52.358 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|S_SB  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT ; Clk          ; Clk         ; 56.387       ; 0.010      ; 4.071      ;
+; 52.362 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|ACC[4]                                   ; Clk          ; Clk         ; 56.387       ; 0.017      ; 4.074      ;
+; 52.363 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[7]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.051      ;
+; 52.363 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; S_REG_LATCH1[4]                                      ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.069      ;
+; 52.364 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; S_REG_LATCH1[3]                                      ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.068      ;
+; 52.367 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|ACC[2]                                   ; Clk          ; Clk         ; 56.387       ; 0.008      ; 4.060      ;
+; 52.369 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; S_REG_LATCH1[0]                                      ; Clk          ; Clk         ; 56.387       ; 0.013      ; 4.063      ;
+; 52.381 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; Y_REG[0]                                             ; Clk          ; Clk         ; 56.387       ; -0.009     ; 4.029      ;
+; 52.383 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[7]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.023      ;
+; 52.388 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|AC_SBR  ; ALU:MOD_ALU|BI[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.003     ; 4.028      ;
+; 52.395 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|BI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 4.017      ;
+; 52.396 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[5]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.010      ;
+; 52.403 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|BI[6]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 4.003      ;
+; 52.406 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[1]                                    ; Clk          ; Clk         ; 56.387       ; -0.011     ; 4.002      ;
+; 52.408 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; ALU:MOD_ALU|AI[3]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.006      ;
+; 52.409 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; ALU:MOD_ALU|AI[2]                                    ; Clk          ; Clk         ; 56.387       ; -0.005     ; 4.005      ;
+; 52.413 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT ; Clk          ; Clk         ; 56.387       ; 0.006      ; 4.012      ;
+; 52.417 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; Y_REG[7]                                             ; Clk          ; Clk         ; 56.387       ; -0.009     ; 3.993      ;
+; 52.422 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|Y_SBR ; ALU:MOD_ALU|BI[6]                                    ; Clk          ; Clk         ; 56.387       ; -0.013     ; 3.984      ;
+; 52.429 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; PC:MOD_PC|PCHS[4]                                    ; Clk          ; Clk         ; 56.387       ; -0.009     ; 3.981      ;
+; 52.433 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|AI[7]                                    ; Clk          ; Clk         ; 56.387       ; 0.001      ; 3.987      ;
+; 52.434 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB06R   ; ALU:MOD_ALU|BI[2]                                    ; Clk          ; Clk         ; 56.387       ; -0.007     ; 3.978      ;
+; 52.436 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; Y_REG[5]                                             ; Clk          ; Clk         ; 56.387       ; -0.015     ; 3.968      ;
+; 52.436 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL|X_SBR ; X_REG[5]                                             ; Clk          ; Clk         ; 56.387       ; -0.015     ; 3.968      ;
++--------+-------------------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Clk'                                                                                                                                                                                                                              ;
++-------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                         ; To Node                                                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK6LATCH1  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK6LATCH1  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.236 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|NMIPLATCH   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.237 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ANDS1                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ANDS                        ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.389      ;
+; 0.241 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|ARC_CR                              ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|DBZ_ZR                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|RDYDELAY2                     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|BRLATCH2                      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK5LATCH   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|ADH_ABHR                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH2     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC1                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|N_LATCH2                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nN_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW2                               ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.244 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|I_LATCH1                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|I_LATCH2                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|BRLATCH2                      ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC2                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH2     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH1     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245 ; RESPR1                                                                            ; RESPR2                                                                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH3                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|VSET                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH1                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH2                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.247 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRESXLATCH2                   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRES2LATCH                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.248 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA1                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA                        ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.400      ;
+; 0.249 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH1                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH2                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.250 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1XLATCH                      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.250 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.253 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[1]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[2]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.405      ;
+; 0.253 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|DONMILATCH  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.405      ;
+; 0.254 ; RESPR2                                                                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRESXLATCH2                   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.406      ;
+; 0.254 ; RESPR2                                                                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.406      ;
+; 0.254 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS2LATCH                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.406      ;
+; 0.257 ; PC:MOD_PC|PCLS[1]                                                                 ; PC:MOD_PC|PCL[1]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.409      ;
+; 0.257 ; PC:MOD_PC|PCLS[7]                                                                 ; PC:MOD_PC|PCL[7]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.409      ;
+; 0.260 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW2                               ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.412      ;
+; 0.260 ; PC:MOD_PC|PCLS[1]                                                                 ; PC:MOD_PC|PCL[3]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.412      ;
+; 0.261 ; PC:MOD_PC|PCLS[1]                                                                 ; PC:MOD_PC|PCL[2]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.413      ;
+; 0.262 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|PC_SETUP:MOD_PC_SETUP|PCL_DBR1                      ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|PC_SETUP:MOD_PC_SETUP|PCL_DBR                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.414      ;
+; 0.264 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH2                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH3                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.416      ;
+; 0.267 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|FETCHLATCH                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.419      ;
+; 0.268 ; ALU:MOD_ALU|AI[0]                                                                 ; ALU:MOD_ALU|ADD[0]                                                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.420      ;
+; 0.271 ; RESPR2                                                                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS2LATCH                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.423      ;
+; 0.291 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|Z_V                                 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nV_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.291 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T67                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T61                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.291 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS1LATCH                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|TRESXLATCH2                   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.292 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T71                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T7                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.444      ;
+; 0.292 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ENDS1LATCH                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.444      ;
+; 0.293 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF1LATCH    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|DELAYLATCH2 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.445      ;
+; 0.293 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[3]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[3]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.445      ;
+; 0.293 ; PC:MOD_PC|PCLS[6]                                                                 ; PC:MOD_PC|PCL[6]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.445      ;
+; 0.293 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|COUT_LATCH                  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.445      ;
+; 0.295 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL2                         ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL_LATCH1                   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.447      ;
+; 0.296 ; PC:MOD_PC|PCL[6]                                                                  ; PC:MOD_PC|PCLS[6]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.448      ;
+; 0.297 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[2]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[2]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.449      ;
+; 0.299 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[0]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[0]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.451      ;
+; 0.299 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ADD_SB7                     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.451      ;
+; 0.301 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA                        ; ALU:MOD_ALU|DSAL                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.453      ;
+; 0.301 ; PC:MOD_PC|PCLS[3]                                                                 ; PC:MOD_PC|PCL[3]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.453      ;
+; 0.327 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL_LATCH1                   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL2                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.327 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|WRLATCH                       ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|nREADY2                       ; Clk          ; Clk         ; 0.000        ; -0.001     ; 0.478      ;
+; 0.328 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nN_OUT                              ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|N_LATCH2                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.480      ;
+; 0.329 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nZ_OUT                              ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|Z_LATCH2                            ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.333 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|nDSA                        ; ALU:MOD_ALU|DSAHR                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.485      ;
+; 0.333 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH2                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.485      ;
+; 0.360 ; PC:MOD_PC|PCLS[0]                                                                 ; PC:MOD_PC|PCL[0]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH2                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|STEPLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.362 ; PC:MOD_PC|PCL[4]                                                                  ; PC:MOD_PC|PCLS[4]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; PC:MOD_PC|PCHS[3]                                                                 ; PC:MOD_PC|PCH[3]                                                                  ; Clk          ; Clk         ; 0.000        ; -0.008     ; 0.506      ;
+; 0.364 ; PC:MOD_PC|PCHS[3]                                                                 ; PC:MOD_PC|PCH[4]                                                                  ; Clk          ; Clk         ; 0.000        ; -0.008     ; 0.508      ;
+; 0.364 ; PREDECODE_IR:MOD_PREDECODE_IR|IR[5]                                               ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|AVR_LATCH                           ; Clk          ; Clk         ; 0.000        ; 0.001      ; 0.517      ;
+; 0.364 ; PC:MOD_PC|PCL[7]                                                                  ; PC:MOD_PC|PCLS[7]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; PC:MOD_PC|PCL[5]                                                                  ; PC:MOD_PC|PCLS[5]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|DELAYLATCH2 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|FF2LATCH    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T1XLATCH                      ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T0LATCH                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH2                    ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.366 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T62                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T61                           ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.368 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|MUX_LATCH                   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|FFLATCH1                    ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; PC:MOD_PC|PCL[0]                                                                  ; PC:MOD_PC|PCLS[0]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; PC:MOD_PC|PCHS[2]                                                                 ; PC:MOD_PC|PCH[2]                                                                  ; Clk          ; Clk         ; 0.000        ; -0.008     ; 0.513      ;
+; 0.369 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|RDYDELAY2                     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|ACRL_LATCH1                   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|T7                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL|ADL_ABLR                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|SO_LATCH1                           ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|VSET                                ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.372 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|RDYDELAY1                     ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|PC_SETUP:MOD_PC_SETUP|ADL_PCLR                      ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK6LATCH1  ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BRK7LATCH   ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|RESLATCH2   ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC1                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; PC:MOD_PC|PCLS[2]                                                                 ; PC:MOD_PC|PCL[3]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; PC:MOD_PC|PCLS[2]                                                                 ; PC:MOD_PC|PCL[2]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP|ACIN3                       ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; PC:MOD_PC|PCL[3]                                                                  ; PC:MOD_PC|PCLS[3]                                                                 ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|BRFW                                ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH|IPC2                          ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; PC:MOD_PC|PCLS[5]                                                                 ; PC:MOD_PC|PCL[6]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|DB_CR                               ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nC_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[2]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[3]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; PC:MOD_PC|PCLS[7]                                                                 ; PC:MOD_PC|PCH[0]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[3]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[3]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; PC:MOD_PC|PCLS[5]                                                                 ; PC:MOD_PC|PCL[5]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; PC:MOD_PC|PCLS[7]                                                                 ; PC:MOD_PC|PCH[1]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; nIRQP                                                                             ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL|BLATCH2     ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[2]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[2]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[1]                                         ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[1]                                         ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; PC:MOD_PC|PCLS[4]                                                                 ; PC:MOD_PC|PCL[6]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; PC:MOD_PC|PCLS[4]                                                                 ; PC:MOD_PC|PCL[4]                                                                  ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.379 ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|D_LATCH2                            ; RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS|nD_OUT                              ; Clk          ; Clk         ; 0.000        ; 0.000      ; 0.531      ;
++-------+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Clk'                                                                                     ;
++-------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                    ;
++-------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[0]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[1]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[2]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[3]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[4]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[5]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[6]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABH_LATCH[7]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[0]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[1]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[2]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[3]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[4]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[5]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[6]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ABL_LATCH[7]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[0]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[1]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[2]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[3]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[4]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[5]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[6]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ACC[7]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[0]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[1]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[2]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[3]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[4]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[5]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[6]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|ADD[7]                        ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[0]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[1]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[2]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[3]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[4]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[5]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[6]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AI[7]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|AVR                           ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[0]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[1]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[2]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[3]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[4]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[5]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[6]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|BI[7]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DAAHR                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DAAL                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DSAHR                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|DSAL                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|LATCH_C7                      ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; ALU:MOD_ALU|LATCH_DC7                     ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[0]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[1]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[2]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[3]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[4]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[5]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[6]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DL_LATCH[7]                               ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[0]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[1]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[2]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[3]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[4]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[5]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[6]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; DOR_LATCH[7]                              ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[0] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[1] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[2] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH1[3] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[0] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[1] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[2] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; EXTRA_COUNTER:MOD_EXTRA_COUNTER|LATCH2[3] ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[0]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[1]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[2]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[3]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[4]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[5]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[6]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCHS[7]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[0]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[1]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[2]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[3]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[4]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[5]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[6]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCH[7]                          ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[0]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[1]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[2]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[3]                         ;
+; 4.000 ; 5.000        ; 1.000          ; High Pulse Width ; Clk   ; Rise       ; PC:MOD_PC|PCLS[4]                         ;
++-------+--------------+----------------+------------------+-------+------------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clk        ; 2.421  ; 2.421  ; Rise       ; Clk             ;
+;  DIN[0]   ; Clk        ; 2.264  ; 2.264  ; Rise       ; Clk             ;
+;  DIN[1]   ; Clk        ; 2.184  ; 2.184  ; Rise       ; Clk             ;
+;  DIN[2]   ; Clk        ; 2.421  ; 2.421  ; Rise       ; Clk             ;
+;  DIN[3]   ; Clk        ; 2.268  ; 2.268  ; Rise       ; Clk             ;
+;  DIN[4]   ; Clk        ; 2.252  ; 2.252  ; Rise       ; Clk             ;
+;  DIN[5]   ; Clk        ; -0.221 ; -0.221 ; Rise       ; Clk             ;
+;  DIN[6]   ; Clk        ; -0.075 ; -0.075 ; Rise       ; Clk             ;
+;  DIN[7]   ; Clk        ; -0.048 ; -0.048 ; Rise       ; Clk             ;
+; PHI0      ; Clk        ; 6.394  ; 6.394  ; Rise       ; Clk             ;
+; RDY       ; Clk        ; 2.168  ; 2.168  ; Rise       ; Clk             ;
+; SO        ; Clk        ; 2.107  ; 2.107  ; Rise       ; Clk             ;
+; nIRQ      ; Clk        ; 2.133  ; 2.133  ; Rise       ; Clk             ;
+; nNMI      ; Clk        ; 1.950  ; 1.950  ; Rise       ; Clk             ;
+; nRES      ; Clk        ; -0.256 ; -0.256 ; Rise       ; Clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clk        ; 0.341  ; 0.341  ; Rise       ; Clk             ;
+;  DIN[0]   ; Clk        ; -2.144 ; -2.144 ; Rise       ; Clk             ;
+;  DIN[1]   ; Clk        ; -2.064 ; -2.064 ; Rise       ; Clk             ;
+;  DIN[2]   ; Clk        ; -2.301 ; -2.301 ; Rise       ; Clk             ;
+;  DIN[3]   ; Clk        ; -2.148 ; -2.148 ; Rise       ; Clk             ;
+;  DIN[4]   ; Clk        ; -2.132 ; -2.132 ; Rise       ; Clk             ;
+;  DIN[5]   ; Clk        ; 0.341  ; 0.341  ; Rise       ; Clk             ;
+;  DIN[6]   ; Clk        ; 0.195  ; 0.195  ; Rise       ; Clk             ;
+;  DIN[7]   ; Clk        ; 0.168  ; 0.168  ; Rise       ; Clk             ;
+; PHI0      ; Clk        ; -2.326 ; -2.326 ; Rise       ; Clk             ;
+; RDY       ; Clk        ; -2.015 ; -2.015 ; Rise       ; Clk             ;
+; SO        ; Clk        ; -1.987 ; -1.987 ; Rise       ; Clk             ;
+; nIRQ      ; Clk        ; -2.013 ; -2.013 ; Rise       ; Clk             ;
+; nNMI      ; Clk        ; -1.830 ; -1.830 ; Rise       ; Clk             ;
+; nRES      ; Clk        ; 0.376  ; 0.376  ; Rise       ; Clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; Clk        ; 4.074 ; 4.074 ; Rise       ; Clk             ;
+;  A[0]     ; Clk        ; 3.931 ; 3.931 ; Rise       ; Clk             ;
+;  A[1]     ; Clk        ; 3.942 ; 3.942 ; Rise       ; Clk             ;
+;  A[2]     ; Clk        ; 4.036 ; 4.036 ; Rise       ; Clk             ;
+;  A[3]     ; Clk        ; 3.738 ; 3.738 ; Rise       ; Clk             ;
+;  A[4]     ; Clk        ; 4.074 ; 4.074 ; Rise       ; Clk             ;
+;  A[5]     ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+;  A[6]     ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+;  A[7]     ; Clk        ; 3.956 ; 3.956 ; Rise       ; Clk             ;
+;  A[8]     ; Clk        ; 3.918 ; 3.918 ; Rise       ; Clk             ;
+;  A[9]     ; Clk        ; 4.064 ; 4.064 ; Rise       ; Clk             ;
+;  A[10]    ; Clk        ; 3.860 ; 3.860 ; Rise       ; Clk             ;
+;  A[11]    ; Clk        ; 3.987 ; 3.987 ; Rise       ; Clk             ;
+;  A[12]    ; Clk        ; 3.871 ; 3.871 ; Rise       ; Clk             ;
+;  A[13]    ; Clk        ; 3.855 ; 3.855 ; Rise       ; Clk             ;
+;  A[14]    ; Clk        ; 3.982 ; 3.982 ; Rise       ; Clk             ;
+;  A[15]    ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+; DOUT[*]   ; Clk        ; 3.943 ; 3.943 ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 3.836 ; 3.836 ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 3.849 ; 3.849 ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 3.831 ; 3.831 ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 3.943 ; 3.943 ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 3.819 ; 3.819 ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 3.893 ; 3.893 ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 3.890 ; 3.890 ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 3.808 ; 3.808 ; Rise       ; Clk             ;
+; RW        ; Clk        ; 4.268 ; 4.268 ; Rise       ; Clk             ;
+; SYNC      ; Clk        ; 3.850 ; 3.850 ; Rise       ; Clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; Clk        ; 3.738 ; 3.738 ; Rise       ; Clk             ;
+;  A[0]     ; Clk        ; 3.931 ; 3.931 ; Rise       ; Clk             ;
+;  A[1]     ; Clk        ; 3.942 ; 3.942 ; Rise       ; Clk             ;
+;  A[2]     ; Clk        ; 4.036 ; 4.036 ; Rise       ; Clk             ;
+;  A[3]     ; Clk        ; 3.738 ; 3.738 ; Rise       ; Clk             ;
+;  A[4]     ; Clk        ; 4.074 ; 4.074 ; Rise       ; Clk             ;
+;  A[5]     ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+;  A[6]     ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+;  A[7]     ; Clk        ; 3.956 ; 3.956 ; Rise       ; Clk             ;
+;  A[8]     ; Clk        ; 3.918 ; 3.918 ; Rise       ; Clk             ;
+;  A[9]     ; Clk        ; 4.064 ; 4.064 ; Rise       ; Clk             ;
+;  A[10]    ; Clk        ; 3.860 ; 3.860 ; Rise       ; Clk             ;
+;  A[11]    ; Clk        ; 3.987 ; 3.987 ; Rise       ; Clk             ;
+;  A[12]    ; Clk        ; 3.871 ; 3.871 ; Rise       ; Clk             ;
+;  A[13]    ; Clk        ; 3.855 ; 3.855 ; Rise       ; Clk             ;
+;  A[14]    ; Clk        ; 3.982 ; 3.982 ; Rise       ; Clk             ;
+;  A[15]    ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+; DOUT[*]   ; Clk        ; 3.808 ; 3.808 ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 3.836 ; 3.836 ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 3.849 ; 3.849 ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 3.831 ; 3.831 ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 3.943 ; 3.943 ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 3.819 ; 3.819 ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 3.893 ; 3.893 ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 3.890 ; 3.890 ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 3.808 ; 3.808 ; Rise       ; Clk             ;
+; RW        ; Clk        ; 4.268 ; 4.268 ; Rise       ; Clk             ;
+; SYNC      ; Clk        ; 3.850 ; 3.850 ; Rise       ; Clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; PHI0       ; PHI1        ;       ; 5.226 ; 5.226 ;       ;
+; PHI0       ; PHI2        ; 5.213 ;       ;       ; 5.213 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; PHI0       ; PHI1        ;       ; 5.226 ; 5.226 ;       ;
+; PHI0       ; PHI2        ; 5.213 ;       ;       ; 5.213 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------------------+
+; Output Enable Times                                                  ;
++-----------+------------+-------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 3.874 ;      ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 3.874 ;      ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 4.185 ;      ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 4.094 ;      ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 4.332 ;      ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 4.052 ;      ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 4.332 ;      ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 3.874 ;      ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 3.903 ;      ; Rise       ; Clk             ;
++-----------+------------+-------+------+------------+-----------------+
+
+
++----------------------------------------------------------------------+
+; Minimum Output Enable Times                                          ;
++-----------+------------+-------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 3.874 ;      ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 3.874 ;      ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 4.185 ;      ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 4.094 ;      ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 4.332 ;      ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 4.052 ;      ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 4.332 ;      ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 3.874 ;      ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 3.903 ;      ; Rise       ; Clk             ;
++-----------+------------+-------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 3.874     ;           ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 3.874     ;           ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 4.185     ;           ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 4.094     ;           ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 4.332     ;           ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 4.052     ;           ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 4.332     ;           ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 3.874     ;           ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 3.903     ;           ; Rise       ; Clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; DOUT[*]   ; Clk        ; 3.874     ;           ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 3.874     ;           ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 4.185     ;           ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 4.094     ;           ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 4.332     ;           ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 4.052     ;           ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 4.332     ;           ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 3.874     ;           ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 3.903     ;           ; Rise       ; Clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 41.241 ; 0.215 ; N/A      ; N/A     ; 3.758               ;
+;  Clk             ; 41.241 ; 0.215 ; N/A      ; N/A     ; 3.758               ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  Clk             ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clk        ; 5.420  ; 5.420  ; Rise       ; Clk             ;
+;  DIN[0]   ; Clk        ; 4.931  ; 4.931  ; Rise       ; Clk             ;
+;  DIN[1]   ; Clk        ; 4.724  ; 4.724  ; Rise       ; Clk             ;
+;  DIN[2]   ; Clk        ; 5.420  ; 5.420  ; Rise       ; Clk             ;
+;  DIN[3]   ; Clk        ; 4.894  ; 4.894  ; Rise       ; Clk             ;
+;  DIN[4]   ; Clk        ; 4.916  ; 4.916  ; Rise       ; Clk             ;
+;  DIN[5]   ; Clk        ; 0.296  ; 0.296  ; Rise       ; Clk             ;
+;  DIN[6]   ; Clk        ; 0.729  ; 0.729  ; Rise       ; Clk             ;
+;  DIN[7]   ; Clk        ; 0.577  ; 0.577  ; Rise       ; Clk             ;
+; PHI0      ; Clk        ; 18.219 ; 18.219 ; Rise       ; Clk             ;
+; RDY       ; Clk        ; 4.758  ; 4.758  ; Rise       ; Clk             ;
+; SO        ; Clk        ; 4.585  ; 4.585  ; Rise       ; Clk             ;
+; nIRQ      ; Clk        ; 4.865  ; 4.865  ; Rise       ; Clk             ;
+; nNMI      ; Clk        ; 4.207  ; 4.207  ; Rise       ; Clk             ;
+; nRES      ; Clk        ; 0.235  ; 0.235  ; Rise       ; Clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DIN[*]    ; Clk        ; 0.341  ; 0.341  ; Rise       ; Clk             ;
+;  DIN[0]   ; Clk        ; -2.144 ; -2.144 ; Rise       ; Clk             ;
+;  DIN[1]   ; Clk        ; -2.064 ; -2.064 ; Rise       ; Clk             ;
+;  DIN[2]   ; Clk        ; -2.301 ; -2.301 ; Rise       ; Clk             ;
+;  DIN[3]   ; Clk        ; -2.148 ; -2.148 ; Rise       ; Clk             ;
+;  DIN[4]   ; Clk        ; -2.132 ; -2.132 ; Rise       ; Clk             ;
+;  DIN[5]   ; Clk        ; 0.341  ; 0.341  ; Rise       ; Clk             ;
+;  DIN[6]   ; Clk        ; 0.195  ; 0.195  ; Rise       ; Clk             ;
+;  DIN[7]   ; Clk        ; 0.168  ; 0.168  ; Rise       ; Clk             ;
+; PHI0      ; Clk        ; -2.326 ; -2.326 ; Rise       ; Clk             ;
+; RDY       ; Clk        ; -2.015 ; -2.015 ; Rise       ; Clk             ;
+; SO        ; Clk        ; -1.987 ; -1.987 ; Rise       ; Clk             ;
+; nIRQ      ; Clk        ; -2.013 ; -2.013 ; Rise       ; Clk             ;
+; nNMI      ; Clk        ; -1.830 ; -1.830 ; Rise       ; Clk             ;
+; nRES      ; Clk        ; 0.376  ; 0.376  ; Rise       ; Clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; Clk        ; 8.886 ; 8.886 ; Rise       ; Clk             ;
+;  A[0]     ; Clk        ; 8.509 ; 8.509 ; Rise       ; Clk             ;
+;  A[1]     ; Clk        ; 8.529 ; 8.529 ; Rise       ; Clk             ;
+;  A[2]     ; Clk        ; 8.848 ; 8.848 ; Rise       ; Clk             ;
+;  A[3]     ; Clk        ; 7.829 ; 7.829 ; Rise       ; Clk             ;
+;  A[4]     ; Clk        ; 8.740 ; 8.740 ; Rise       ; Clk             ;
+;  A[5]     ; Clk        ; 8.563 ; 8.563 ; Rise       ; Clk             ;
+;  A[6]     ; Clk        ; 8.553 ; 8.553 ; Rise       ; Clk             ;
+;  A[7]     ; Clk        ; 8.538 ; 8.538 ; Rise       ; Clk             ;
+;  A[8]     ; Clk        ; 8.554 ; 8.554 ; Rise       ; Clk             ;
+;  A[9]     ; Clk        ; 8.886 ; 8.886 ; Rise       ; Clk             ;
+;  A[10]    ; Clk        ; 8.322 ; 8.322 ; Rise       ; Clk             ;
+;  A[11]    ; Clk        ; 8.230 ; 8.230 ; Rise       ; Clk             ;
+;  A[12]    ; Clk        ; 8.210 ; 8.210 ; Rise       ; Clk             ;
+;  A[13]    ; Clk        ; 8.430 ; 8.430 ; Rise       ; Clk             ;
+;  A[14]    ; Clk        ; 8.588 ; 8.588 ; Rise       ; Clk             ;
+;  A[15]    ; Clk        ; 8.557 ; 8.557 ; Rise       ; Clk             ;
+; DOUT[*]   ; Clk        ; 8.372 ; 8.372 ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 8.161 ; 8.161 ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 8.179 ; 8.179 ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 8.183 ; 8.183 ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 8.334 ; 8.334 ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 8.371 ; 8.371 ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 8.251 ; 8.251 ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 8.240 ; 8.240 ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 8.372 ; 8.372 ; Rise       ; Clk             ;
+; RW        ; Clk        ; 9.463 ; 9.463 ; Rise       ; Clk             ;
+; SYNC      ; Clk        ; 8.177 ; 8.177 ; Rise       ; Clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A[*]      ; Clk        ; 3.738 ; 3.738 ; Rise       ; Clk             ;
+;  A[0]     ; Clk        ; 3.931 ; 3.931 ; Rise       ; Clk             ;
+;  A[1]     ; Clk        ; 3.942 ; 3.942 ; Rise       ; Clk             ;
+;  A[2]     ; Clk        ; 4.036 ; 4.036 ; Rise       ; Clk             ;
+;  A[3]     ; Clk        ; 3.738 ; 3.738 ; Rise       ; Clk             ;
+;  A[4]     ; Clk        ; 4.074 ; 4.074 ; Rise       ; Clk             ;
+;  A[5]     ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+;  A[6]     ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+;  A[7]     ; Clk        ; 3.956 ; 3.956 ; Rise       ; Clk             ;
+;  A[8]     ; Clk        ; 3.918 ; 3.918 ; Rise       ; Clk             ;
+;  A[9]     ; Clk        ; 4.064 ; 4.064 ; Rise       ; Clk             ;
+;  A[10]    ; Clk        ; 3.860 ; 3.860 ; Rise       ; Clk             ;
+;  A[11]    ; Clk        ; 3.987 ; 3.987 ; Rise       ; Clk             ;
+;  A[12]    ; Clk        ; 3.871 ; 3.871 ; Rise       ; Clk             ;
+;  A[13]    ; Clk        ; 3.855 ; 3.855 ; Rise       ; Clk             ;
+;  A[14]    ; Clk        ; 3.982 ; 3.982 ; Rise       ; Clk             ;
+;  A[15]    ; Clk        ; 3.968 ; 3.968 ; Rise       ; Clk             ;
+; DOUT[*]   ; Clk        ; 3.808 ; 3.808 ; Rise       ; Clk             ;
+;  DOUT[0]  ; Clk        ; 3.836 ; 3.836 ; Rise       ; Clk             ;
+;  DOUT[1]  ; Clk        ; 3.849 ; 3.849 ; Rise       ; Clk             ;
+;  DOUT[2]  ; Clk        ; 3.831 ; 3.831 ; Rise       ; Clk             ;
+;  DOUT[3]  ; Clk        ; 3.943 ; 3.943 ; Rise       ; Clk             ;
+;  DOUT[4]  ; Clk        ; 3.819 ; 3.819 ; Rise       ; Clk             ;
+;  DOUT[5]  ; Clk        ; 3.893 ; 3.893 ; Rise       ; Clk             ;
+;  DOUT[6]  ; Clk        ; 3.890 ; 3.890 ; Rise       ; Clk             ;
+;  DOUT[7]  ; Clk        ; 3.808 ; 3.808 ; Rise       ; Clk             ;
+; RW        ; Clk        ; 4.268 ; 4.268 ; Rise       ; Clk             ;
+; SYNC      ; Clk        ; 3.850 ; 3.850 ; Rise       ; Clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; PHI0       ; PHI1        ;        ; 10.539 ; 10.539 ;        ;
+; PHI0       ; PHI2        ; 10.512 ;        ;        ; 10.512 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; PHI0       ; PHI1        ;       ; 5.226 ; 5.226 ;       ;
+; PHI0       ; PHI2        ; 5.213 ;       ;       ; 5.213 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clk        ; Clk      ; 9322     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clk        ; Clk      ; 9322     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 14    ; 14   ;
+; Unconstrained Input Port Paths  ; 301   ; 301  ;
+; Unconstrained Output Ports      ; 28    ; 28   ;
+; Unconstrained Output Port Paths ; 36    ; 36   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Jul 19 16:08:47 2024
+Info: Command: quartus_sta 6502 -c 6502
+Info: qsta_default_script.tcl version: #1
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'MOS6502.out.sdc'
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 41.241
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    41.241         0.000 Clk 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 Clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 3.758
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     3.758         0.000 Clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 51.643
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    51.643         0.000 Clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 Clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 4.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     4.000         0.000 Clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info (144001): Generated suppressed messages file C:/altera/13.0sp1/BREAKS_6502/output_files/6502.sta.smsg
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 405 megabytes
+    Info: Processing ended: Fri Jul 19 16:08:48 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++-----------------------------------------------+
+; TimeQuest Timing Analyzer Suppressed Messages ;
++-----------------------------------------------+
+The suppressed messages can be found in C:/altera/13.0sp1/BREAKS_6502/output_files/6502.sta.smsg.
+
+
