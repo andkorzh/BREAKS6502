@@ -8,4 +8,20 @@ Video on YouTube  https://www.youtube.com/watch?v=dFyq43pBDUY
 
 Results of the core operation as part of the FPGA 2A03 NES APU. Blargg CPU tests.
 
-![IMG_3046](https://github.com/user-attachments/assets/b6e75e27-2aec-44c3-ac50-1a53e20adcd7)
+![b_CPU](https://github.com/user-attachments/assets/af23c4ee-1910-4a24-8849-2583ea15a04e)
+
+NESTEST (Kevin Horton) test results
+
+![IMG_3065](https://github.com/user-attachments/assets/ec9a1007-c343-4d17-8f17-4e0aea6a62be)
+
+![IMG_3064](https://github.com/user-attachments/assets/f2c55ba4-e11e-470b-91dc-f2fa2f50c1a3)
+
+NES 6502 Timing Test
+
+![IMG_3066](https://github.com/user-attachments/assets/cc2e8ee3-4f55-4132-8ede-6232027ca01c)
+
+
+
+
+
+
