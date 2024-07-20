@@ -1,6 +1,6 @@
 /*
  ===============================================================================================
- *                           Copyright (C) 2023  EMU-RUSSIA.COM
+ *                           Copyright (C) 2023-2024 andkorzh 
  *
  *
  *                This program is free software; you can redistribute it and/or
