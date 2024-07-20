@@ -20,7 +20,9 @@ NES 6502 Timing Test
 
 ![IMG_3066](https://github.com/user-attachments/assets/cc2e8ee3-4f55-4132-8ede-6232027ca01c)
 
+Operation of the core as part of the APU 2a03 on the FPGA. Sound check.
 
+Video on YouTube https://www.youtube.com/watch?v=xtj7G8qB2oU 
 
 
 
