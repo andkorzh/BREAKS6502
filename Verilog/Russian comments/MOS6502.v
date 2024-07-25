@@ -1563,53 +1563,28 @@ module BUS_MUX(
 	output [7:0]ADL,	       // Выход шины ADL
 	output [7:0]ADH 	       // Выход шины ADH		
 );
-
 // Комбинаторика
 // Промежуточные шины
 wire [7:0]DBT;  
 wire [7:0]SBT;
-wire [7:0]SBR;
-wire [7:0]SBB;
 wire [7:0]SBH;
-wire [7:0]ADLT; 
 wire [7:0]ADHT;
-wire [7:0]ADHC; 
-// Мультиплексор шины DBT
-assign DBT[7:0]  = (PCL[7:0]&{8{PCL_DB}}) | (PCH[7:0]&{8{PCH_DB}}) | (ACC[7:0]&{8{AC_DB}}) | (FLAG[7:0]&{8{P_DB}}) | (DL[7:0]&{8{DL_DB}}) | {8{~( PCL_DB | PCH_DB | AC_DB | P_DB | DL_DB )}};
-// Мультиплексор шины SBT
-assign SBT[7:0]  = (X_REG[7:0] & {8{X_SB}}) | (Y_REG[7:0] & {8{Y_SB}}) | (S_REG[7:0] & {8{S_SB}}) | (ACC[7:0] & {8{AC_SB}}) | {8{~( X_SB | Y_SB | S_SB | AC_SB)}};
-// Мультиплексор шины ADLT
-assign ADLT[7:0]  = (S_REG[7:0] & {8{S_ADL}}) | (PCL[7:0] & {8{PCL_ADL}}) | (DL[7:0] & {8{DL_ADL}}) | (ADD[7:0] & {8{ADD_ADL}}) | {8{~( S_ADL | PCL_ADL | DL_ADL | ADD_ADL)}}; 
-// Мультиплексор шины ADHT
-assign ADHT[7:0] = (PCH[7:0] & {8{PCH_ADH}}) | (DL[7:0] & {8{DL_ADH}}) | {8{~(PCH_ADH | DL_ADH)}};
-// Мультиплексор шины SBH
-assign SBH[7:0]  =  SB_ADH  ? ( ADHC[7:0] & SBR[7:0] ) : SBR[7:0]; 
-// Генератор констант
-assign ADL[7:3]  =  ADLT[7:3];
-assign ADL[0]    = ~Z_ADL0  & ADLT[0];
-assign ADL[1]    = ~Z_ADL1  & ADLT[1];
-assign ADL[2]    = ~Z_ADL2  & ADLT[2];
-assign ADHC[0]   = ~Z_ADH0  & ADHT[0];
-assign ADHC[7:1] = { 7 { ~Z_ADH17 }} & ADHT[7:1];
-// Вывод данных АЛУ на шину SB
-assign SBB[6:0]  = (ADD_SB06) ? ADD[6:0] : SBT[6:0];
-assign SBB[7]    = (ADD_SB7)  ? ADD[7]   : SBT[7]; 
-// Вывод значений для обработки недокументированных опкодов на шину SB
-wire SELND1;
-wire SELND2;
-wire [7:0]SBADX;
-wire [7:0]SBADXY;
-assign SELND1 = (X_SB & ADD_SB06 & ADD_SB7) | (Y_SB & ADD_SB06 & ADD_SB7);
-assign SELND2 = X_SB & AC_SB;
-assign SBADX[7:0]  =   X_REG[7:0] & ACC[7:0] & { 8 { SELND2 }};
-assign SBADXY[7:0] = ( X_REG[7:0] & ADD[7:0] & {8{ X_SB & ADD_SB06 & ADD_SB7 }}) | ( Y_REG[7:0] & ADD[7:0] & {8{ Y_SB & ADD_SB06 & ADD_SB7 }});
-assign SBR[7:0]    = SBADX[7:0] | ( SBB[7:0] & {8{ ~( SELND1 | SELND2 )}}) | ( SBADXY[7:0] & { 8 { SELND1 }});
+// Мультиплексор промежуточной шины DBT
+assign DBT[7:0]  = ( ~{8{AC_DB}} | ACC[7:0] ) & ( ~{8{P_DB}} | FLAG[7:0] ) & ( ~{8{DL_DB}} | DL[7:0] ) & ( ~{8{PCL_DB}} | PCL[7:0] ) & ( ~{8{PCH_DB}} | PCH[7:0] );
+// Мультиплексор промежуточной шины SBT
+assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( ~{8{AC_SB}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
+// Мультиплексор промежуточной шины ADHT
+assign ADHT[7:0] = ( ~{8{PCH_ADH}} | PCH[7:0] ) & ( ~{8{DL_ADH}} | DL[7:0] ) & { ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH0 };
+// Мультиплексор промежуточной шины SBH
+assign SBH[7:0]  =  SB_ADH ? ( ADHT[7:0] & SBT[7:0] ) : SBT[7:0];
 // Мультиплексор шины DB
 assign DB[7:0]   =  SB_DB  ? ( DBT[7:0]  & SBH[7:0] ) : DBT[7:0];
 // Мультиплексор шины SB
 assign SB[7:0]   =  SB_DB  ? ( DBT[7:0]  & SBH[7:0] ) : SBH[7:0];
 // Мультиплексор шины ADH
-assign ADH[7:0]  =  SB_ADH ? ( ADHC[7:0] & SBR[7:0] ) : ADHC[7:0];					
+assign ADH[7:0]  =  SB_ADH ? ( ADHT[7:0] & SBT[7:0] ) : ADHT[7:0];
+// Мультиплексор шины ADL
+assign ADL[7:0]  = ( ~{8{S_ADL}} | S_REG[7:0] ) & ( ~{8{ADD_ADL}} | ADD[7:0] ) & ( ~{8{PCL_ADL}} | PCL[7:0] ) & ( ~{8{DL_ADL}} | DL[7:0] ) & { 5'h1f, ~Z_ADL2, ~Z_ADL1, ~Z_ADL0 };					
 // Конец модуля BUS_MUX
 endmodule
 
