@@ -1685,11 +1685,11 @@ always @(posedge Clk) begin
 		               if (PHI2) begin
 		             ADD[7:0]  <= RESULT[7:0];
 				       LATCH_C7  <= COUT[7];
-					    LATCH_DC7 <= DC7;
-								 AVR <=  ( COUT[6] & ORo[7] ) | ( ~COUT[6] & ~ANDo[7] );
-		                 DAAL  <=  ( COUT[3] & ~nDAA );
+					         LATCH_DC7 <= DC7;
+						       AVR <=  ( COUT[6] & ORo[7] ) | ( ~COUT[6] & ~ANDo[7] );
+				                     DAAL  <=  ( DCOUT[3] & ~nDAA );
 						     DAAHR <= ~nDAA;
-						     DSAL  <= ~( COUT[3] |  nDSA );
+				                     DSAL  <= ~( DCOUT[3] |  nDSA );
 						     DSAHR <=  nDSA;
 		                         end
                       end
