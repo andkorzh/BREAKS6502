@@ -6,7 +6,7 @@ A clock-accurate FPGA clone of the NMOs processor 6502, created on the basis of 
 
 Video on YouTube  https://www.youtube.com/watch?v=dFyq43pBDUY
 
-Klaus Dorman passes the functional test completely. The test was carried out at a frequency of 2.5 MHz and took about 40 seconds.
+Klaus Dormann passes the functional test completely. The test was carried out at a frequency of 2.5 MHz and took about 40 seconds.
 
 ![test1](https://github.com/user-attachments/assets/cccddb48-e393-4553-bb48-6e4f23c581be)
 
