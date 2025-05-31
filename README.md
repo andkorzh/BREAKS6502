@@ -4,6 +4,10 @@ A highly clock-accurate FPGA clone of the NMOs processor 6502, created on the ba
 
 ![mos6502](https://github.com/user-attachments/assets/6a017381-b5b0-4531-bb28-27f9e5795a39)
 
+Quartus circuit
+
+![MOS6502](https://github.com/user-attachments/assets/f2552a30-4994-4df0-8842-0b2c34117e4c)
+
 Video on YouTube  https://www.youtube.com/watch?v=dFyq43pBDUY
 
 Klaus Dohrmann successfully passes the functional test. The test was conducted at a frequency of 2.5 MHz and took about 40 seconds.
