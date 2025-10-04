@@ -21,7 +21,7 @@ Klaus Dohrmann successfully passes the functional test. The test was conducted a
 
 Results of the core operation as part of the FPGA 2A03 NES APU. Blargg CPU tests.
 
-![b_CPU](https://github.com/user-attachments/assets/af23c4ee-1910-4a24-8849-2583ea15a04e)
+![IMG_4698](https://github.com/user-attachments/assets/fdba05f8-fa87-45a1-9ef2-40319adf7432)
 
 NESTEST (Kevin Horton) test results
 
