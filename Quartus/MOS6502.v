@@ -37,18 +37,18 @@ module MOS6502 (
    input Clk,               
    input PHI0,              // phase PHI0
    // Inputs	
-	input SO,                // Sync input		
-	input nNMI,              // Non-maskable interrupt input	
-	input nIRQ,              // Maskable interrupt input
-	input nRES,              // Reset signal
- 	input RDY,               // Processor ready signal	
-	input [7:0]DIN,          // Data bus (input)
-	// Outputs
-	output PHI1,             // phase PHI1 (output)
-	output PHI2,             // phase PHI2 (output)	
-	output RW,               // Processor write signal
-	output [7:0]DOUT,        // Data bus (output)
-	output [15:0]A,          // Address Bus
+   input SO,                // Sync input		
+   input nNMI,              // Non-maskable interrupt input	
+   input nIRQ,              // Maskable interrupt input
+   input nRES,              // Reset signal
+   input RDY,               // Processor ready signal	
+   input [7:0]DIN,          // Data bus (input)
+   // Outputs
+   output PHI1,             // phase PHI1 (output)
+   output PHI2,             // phase PHI2 (output)	
+   output RW,               // Processor write signal
+   output [7:0]DOUT,        // Data bus (output)
+   output [15:0]A,          // Address Bus
    output SYNC	             // Sync output (Т1) 
 );
 // Module connections
@@ -149,31 +149,31 @@ assign RW = ~WRPHI1;                                  // Control signal for outp
 assign DOUT[7:0] = ~( RW | PHI1) ? DOR_LATCH[7:0] : 8'hZZ;      // Data bus output control
 // Logics
 always @(posedge Clk) begin 
-       if (PHI1) begin
-       nIRQP    <= nIRQPR1;
+                 if (PHI1) begin
+                 nIRQP    <= nIRQPR1;
 		 RESPR2   <= RESPR1;
 		 nPRDYR2  <= nPRDYR1;
 		 DOR_LATCH[7:0]  <= DB[7:0]; 
-		 		     end					  
-       if (PHI2) begin
+		 end					  
+                 if (PHI2) begin
 		 nNMIP          <= nNMI;
 		 nIRQPR1        <= nIRQ;
 		 RESPR1         <= nRES;
 		 nPRDYR1        <= RDY;
 		 DL_LATCH[7:0]  <= DIN[7:0];
 		 S_REG[7:0]     <= S_REG_LATCH1[7:0];
-		           end
-		 if ( SB_S ) 		  S_REG_LATCH1[7:0] <= SB[7:0];			  
-       if ( ADL_ABL & PHI1 ) ABL_LATCH[7:0] <= ADL[7:0];
-	    if ( ADH_ABH & PHI1 ) ABH_LATCH[7:0] <= ADH[7:0];
+		 end
+		 if ( SB_S ) S_REG_LATCH1[7:0] <= SB[7:0];			  
+                 if ( ADL_ABL & PHI1 ) ABL_LATCH[7:0] <= ADL[7:0];
+	         if ( ADH_ABH & PHI1 ) ABH_LATCH[7:0] <= ADH[7:0];
 		 if ( SB_X ) X_REG[7:0] <= SB[7:0];
 		 if ( SB_Y ) Y_REG[7:0] <= SB[7:0];					  
-		                end		 
+		         end		 
 				 
 // Internal modules
 PREDECODE_IR MOD_PREDECODE_IR(
-   Clk,               
-   PHI1,
+        Clk,               
+        PHI1,
 	Z_IR,              
 	DL_LATCH[7:0],          
 	FETCH,             
@@ -183,9 +183,9 @@ PREDECODE_IR MOD_PREDECODE_IR(
 );  
 
 EXTRA_COUNTER MOD_EXTRA_COUNTER(
-   Clk,               
-   PHI1,
-   PHI2,
+        Clk,               
+        PHI1,
+        PHI2,
 	T1,
 	nREADY,
 	TRES2,		
@@ -208,9 +208,9 @@ DECODER MOD_DECODER(
 );	
 	
 RANDOM_LOGIC MOD_RANDOM_LOGIC(
-   Clk,               
-   PHI1,             	
-   PHI2,             
+        Clk,               
+        PHI1,             	
+        PHI2,             
 	X[128:0],          
 	DB[7:0],           
 	SO,                
@@ -226,9 +226,9 @@ RANDOM_LOGIC MOD_RANDOM_LOGIC(
 	FLAG[7:0],        
 	Z_ADH0,           
 	Z_ADH17,          
-	SB_AC,            
-	ADL_ABL,          	
-	AC_SB,            
+	SB_AC, 
+	ADL_ABL, 
+	AC_SB,
 	SB_DB,            	
 	AC_DB,            
 	SB_ADH,           	 
@@ -256,36 +256,36 @@ RANDOM_LOGIC MOD_RANDOM_LOGIC(
 	Z_IR,             
 	FETCH,           
 	P_DB,             
-   PCL_DB,           
+        PCL_DB,           
 	PCH_DB,           	
 	PCL_ADL,          
-   PCH_ADH,          
+        PCH_ADH,          
 	PCL_PCL,          
 	ADL_PCL,          	
 	ADH_PCH,          
 	PCH_PCH,          	
 	NDB_ADD,         
 	DB_ADD,           	
-   Z_ADD,            
+        Z_ADD,            
 	SB_ADD,           
 	ADL_ADD,          
-   ANDS,             
+        ANDS,             
 	EORS,             
-   ORS,              
-   nACIN,            	
-   SRS,
-   SUMS,	
-   nDAA,             
-   ADD_SB7,          
-   ADD_SB06,         
-   ADD_ADL,          
-   nDSA,             
+        ORS,              
+        nACIN,            	
+        SRS,
+        SUMS,	
+        nDAA,             
+        ADD_SB7,          
+        ADD_SB06,         
+        ADD_ADL,          
+        nDSA,             
 	n1_PC            
 );	
 
 ALU MOD_ALU(
-   Clk,               
-   PHI2,              
+        Clk,               
+        PHI2,              
 	Z_ADD,             
 	SB[7:0],           
 	SB_ADD,            
@@ -293,19 +293,19 @@ ALU MOD_ALU(
 	NDB_ADD,           
 	DB_ADD,            
 	ADL[7:0],          
-   ADL_ADD,           
+        ADL_ADD,           
 	nACIN,             
 	ANDS,              
 	ORS,              
 	EORS,              
 	SRS,
-   SUMS,	
+        SUMS,	
 	SB_AC,            
 	nDAA,              
 	nDSA,              
 	ACC[7:0],          
 	ADD[7:0],          
-   ACR,               
+        ACR,               
 	AVR                
 );	
 
@@ -320,7 +320,8 @@ BUS_MUX MOD_BUS_MUX(
    PCH_DB,			    
    P_DB,			       
    AC_DB,			    
-   AC_SB,			    
+   AC_SB,
+   SB_AC,
    ADD_ADL,			   
    ADD_SB06,			 
    ADD_SB7,		   	 
@@ -350,8 +351,8 @@ BUS_MUX MOD_BUS_MUX(
 );	
 
    PC MOD_PC(
-   Clk,               
-   PHI2,
+        Clk,               
+        PHI2,
 	n1_PC,             
 	PCL_PCL,           
 	ADL_PCL,          
@@ -369,9 +370,9 @@ endmodule
 // Instruction pre-decoding and instruction register module
 //===============================================================================================
 module PREDECODE_IR(
-   // Clocks
-   input Clk,               
-   input PHI1,
+        // Clocks
+        input Clk,               
+        input PHI1,
 	// Inputs	
 	input Z_IR,              // BRK sequence injection
 	input	[7:0]DL_LATCH,     // Input latch data input
@@ -390,7 +391,7 @@ assign nTWOCYCLE = ~(( IMPLIED & ( PD[1] | PD[4] | PD[7] )) | ~( ~PD[0] | PD[2] 
 always @(posedge Clk) begin
        if (PHI1 & FETCH) begin
 		 IR[7:0] <= PD[7:0];
-		                   end				  
+		         end				  
                       end
 // End of instruction pre-decoding module and instruction register
 endmodule
@@ -399,10 +400,10 @@ endmodule
 // Extended cycle counter module
 //===============================================================================================
 module EXTRA_COUNTER(
-   // Clocks
-   input Clk,               
-   input PHI1,
-   input PHI2,
+        // Clocks
+        input Clk,               
+        input PHI1,
+        input PHI2,
 	// Inputs	
 	input T1,
 	input nREADY,
@@ -424,9 +425,9 @@ assign nT4 = TRES2 | LATCH1[2];
 assign nT5 = TRES2 | LATCH1[3];
 // Logics
 always @(posedge Clk) begin
-       if (PHI1) begin
-       LATCH1[0]  <= ( ~nREADY & T1_LATCH  )|( nREADY & ( LATCH2[0]));
-       LATCH1[1]  <= ( ~nREADY & LATCH2[0] )|( nREADY & ( LATCH2[1]));
+                 if (PHI1) begin
+                 LATCH1[0]  <= ( ~nREADY & T1_LATCH  )|( nREADY & ( LATCH2[0]));
+                 LATCH1[1]  <= ( ~nREADY & LATCH2[0] )|( nREADY & ( LATCH2[1]));
 		 LATCH1[2]  <= ( ~nREADY & LATCH2[1] )|( nREADY & ( LATCH2[2]));
 		 LATCH1[3]  <= ( ~nREADY & LATCH2[2] )|( nREADY & ( LATCH2[3]));
 		           end		  
@@ -596,10 +597,10 @@ endmodule
 // Random logic module
 //===============================================================================================
 module RANDOM_LOGIC (
-   // Clocks
-   input Clk,               
-   input PHI1,              // phase PHI1	
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               
+        input PHI1,              // phase PHI1	
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input [128:0]X,          // Instruction decoder outputs
 	input [7:0]DB,           // DB Bus
@@ -647,30 +648,30 @@ module RANDOM_LOGIC (
 	output Z_IR,             // BRK sequence injection
 	output FETCH,            // Opcode fetch
 	output P_DB,             // Flag data to DB Bus	
-   output PCL_DB,           // PCL to  DB  Bus
+    output PCL_DB,           // PCL to  DB  Bus
 	output PCH_DB,           // PCH to  DB  Bus		
 	output PCL_ADL,          // PCL to  ADL Bus
-   output PCH_ADH,          // PCH to  ADH Bus	
+    output PCH_ADH,          // PCH to  ADH Bus	
 	output PCL_PCL,          // Data storage mode in counter bits PCL
 	output ADL_PCL,          // Loading data from the ADL Bus	
 	output ADH_PCH,          // Loading data from the ADH Bus	
 	output PCH_PCH,          // Data storage mode in counter bits PCH	
 	output NDB_ADD,          // ~DB Bus to ALU input		
 	output DB_ADD,           //  DB Bus to ALU input	
-   output Z_ADD,            // Reset input A of ALU
+    output Z_ADD,            // Reset input A of ALU
 	output SB_ADD,           // SB bus to ALU input
 	output ADL_ADD,          // ADL bus to ALU input
-   output ANDS,             // Logical AND
+    output ANDS,             // Logical AND
 	output EORS,             // Exclusive OR
-   output ORS,              // Logical OR	
-   output nACIN,            // ALU input carry	
-   output SRS,              // Shift right
+    output ORS,              // Logical OR	
+    output nACIN,            // ALU input carry	
+    output SRS,              // Shift right
 	output SUMS,             // the result of the sum A+B	
-   output nDAA,             // Perform correction after addition
-   output ADD_SB7,          // ALU output bit 7 to SB bus	
-   output ADD_SB06,         // ALU output bits 0-6 per SB bus	
-   output ADD_ADL,          // ALU output to ADL bus
-   output nDSA,             // Perform correction after subtraction	
+    output nDAA,             // Perform correction after addition
+    output ADD_SB7,          // ALU output bit 7 to SB bus	
+    output ADD_SB06,         // ALU output bits 0-6 per SB bus	
+    output ADD_ADL,          // ALU output to ADL bus
+    output nDSA,             // Perform correction after subtraction	
 	output n1_PC             // PC input carry
 );
 // Module connections
@@ -703,9 +704,9 @@ wire nREADYR;
 
 // FLAGS module
    FLAGS MOD_FLAGS(
-    Clk,               
-    PHI1,              
-    PHI2,              
+         Clk,               
+         PHI1,              
+         PHI2,              
 	 X[128:0],          		
 	 DB[7:0],           
 	 IR5,               	
@@ -729,8 +730,8 @@ wire nREADYR;
 
 // Bus control module
 BUS_CONTROL MOD_BUS_CONTROL(
-   Clk,                            
-   PHI2,              
+        Clk,                            
+        PHI2,              
 	X[128:0],          	
 	T0,                
 	T1,                
@@ -766,9 +767,9 @@ BUS_CONTROL MOD_BUS_CONTROL(
 
 // Interrupt control module
 INT_RESET_CONTROL MOD_INT_RESET_CONTROL(
-   Clk,               
-   PHI1,              
-   PHI2,              
+        Clk,               
+        PHI1,              
+        PHI2,              
 	X[128:0],          
 	nREADY,            
 	RESP,             
@@ -786,8 +787,8 @@ INT_RESET_CONTROL MOD_INT_RESET_CONTROL(
 
 // Register control module
 REGS_CONTROL MOD_REGS_CONTROL(
-   Clk,                             
-   PHI2,              
+        Clk,                             
+        PHI2,              
 	X[128:0],          	
 	STOR,              
 	nREADY,
@@ -807,9 +808,9 @@ REGS_CONTROL MOD_REGS_CONTROL(
 
 // Program counter control module
 PC_SETUP MOD_PC_SETUP(
-   Clk,               
-   PHI1,              
-   PHI2,              
+        Clk,               
+        PHI1,              
+        PHI2,              
 	X[128:0],          	
 	T0,                
 	T1,                
@@ -819,11 +820,11 @@ PC_SETUP MOD_PC_SETUP(
 	PC_DB,             
 	PCH_DB,            
 	PCL_ADL,           	
-   PCH_ADH,          
+        PCH_ADH,          
 	PCL_PCL,           
 	ADL_PCL,           
 	nADL_PCL,          	
-   DL_PCH,            	
+        DL_PCH,            	
 	ADH_PCH,           	
 	PCH_PCH,           
 	nPCH_PCH           		
@@ -831,9 +832,9 @@ PC_SETUP MOD_PC_SETUP(
 
 // ALU control module
 ALU_SETUP MOD_ALU_SETUP(
-   Clk,              
-   PHI1,              
-   PHI2,            
+        Clk,              
+        PHI1,              
+        PHI2,            
 	X[128:0],         
 	nREADY,
 	nREADYR,		
@@ -852,27 +853,27 @@ ALU_SETUP MOD_ALU_SETUP(
 	NDB_ADD,        
 	DB_ADD,            
 	ADL_ADD,          
-   AND,             
-   ANDS,                           
-   ORS,              
-   nACIN,             
-   SRS,
-   SUMS,	
-   EORS,              
-   ADD_SB06,          	
-   ADD_SB7,          
-   ADD_ADL,          
-   nDSA,             	
-   nDAA,             
+        AND,             
+        ANDS,                           
+        ORS,              
+        nACIN,             
+        SRS,
+        SUMS,	
+        EORS,              
+        ADD_SB06,          	
+        ADD_SB7,          
+        ADD_ADL,          
+        nDSA,             	
+        nDAA,             
 	INC_SB,           
-   SR                
+        SR                
 );
 
 // Dispatcher module
 DISPATCH MOD_DISPATCH(
-   Clk,               
-   PHI1,             
-   PHI2,              
+        Clk,               
+        PHI1,             
+        PHI2,              
 	X[128:0],         
 	ACR,               
 	BRFW,             
@@ -894,7 +895,7 @@ DISPATCH MOD_DISPATCH(
 	FETCH,             
 	Z_IR,              
 	nREADY,
-   nREADYR,	
+        nREADYR,	
 	WRPHI1,                
 	T1,                
 	nT0,               
@@ -909,10 +910,10 @@ endmodule
 // FLAGS module
 //===============================================================================================
 module FLAGS(
-   // Clocks
-   input Clk,               
-   input PHI1,              // phase PHI1	
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               
+        input PHI1,              // phase PHI1	
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input [128:0]X,          // Instruction decoder bus		
 	input [7:0]DB,           // DB Bus	
@@ -960,24 +961,24 @@ assign nI_OUT = I_LATCH1 & ~BRK6E;
 assign nBRTAKEN = ~IR5 ^ FLAG_MUX; // Branch readiness signal
 // Logics
 always @(posedge Clk) begin 
-       if (PHI1) begin 
+                 if (PHI1) begin 
 		 // Primary flag latches
 		 nC_OUT   <= ( ~DB[0] & ~DB_CR ) | ( ~ACR & ~ARC_CR  ) | ( ~IR5   & IR5_C ) | ( ~( IR5_C | ~ARC_CR | ~DB_CR ) & C_LATCH2 );
 		 nZ_OUT   <= ( ~DB[1] & DB_P   ) | ( nDBZ & ~DBZ_ZR  ) | ( ~( DB_P | ~DBZ_ZR ) & Z_LATCH2 ); 
 		 I_LATCH1 <= ( ~DB[2] & DB_P   ) | ( ~IR5   & IR5_I  ) | ( ~( IR5_I | DB_P ) & I_LATCH2 );	 
 		 nD_OUT   <= ( ~DB[3] & DB_P   ) | ( ~IR5   & IR5_D  ) | ( ~( IR5_D | DB_P ) & D_LATCH2 ); 
 		 nV_OUT   <= ( ~DB[6] & DB_V   ) | ( AVR & AVR_LATCH ) | ( ~( AVR_LATCH | DB_V | VSET ) & V_LATCH2 ) | Z_V;
-	    nN_OUT   <= ( ~DB[7] & DB_N   ) | ( ~DB_N & N_LATCH2 ); 
+	         nN_OUT   <= ( ~DB[7] & DB_N   ) | ( ~DB_N & N_LATCH2 ); 
 		 // V flag latches
-       SO_LATCH1 <= SO;
+                 SO_LATCH1 <= SO;
 		 SO_LATCH3 <= ~SO_LATCH2;
 		 // Latch BRFW
 		      BRFW <= ( ~BR2_LATCH & BRFW2 ) | ( BR2_LATCH & DB[7] );
                   end
-       if (PHI2) begin
+                 if (PHI2) begin
 		 // Flag Control Circuit Latches 
-       P_DBR  <= ~( X[98] | X[99] );
-       IR5_I  <= X[108];
+                 P_DBR  <= ~( X[98] | X[99] );
+                 IR5_I  <= X[108];
 		 IR5_C  <= X[110];
 		 IR5_D  <= X[120];
 		   Z_V  <= X[127];
@@ -994,7 +995,7 @@ always @(posedge Clk) begin
 		 D_LATCH2 <= nD_OUT;
 		 V_LATCH2 <= nV_OUT;
 		 N_LATCH2 <= nN_OUT;
-       // V flag latches
+                 // V flag latches
 		 AVR_LATCH <= X[112];
 		 SO_LATCH2 <= SO_LATCH1;
 		      VSET <= ~( SO_LATCH1 | SO_LATCH3 );
@@ -1010,9 +1011,9 @@ endmodule
 // Bus control module
 //===============================================================================================
 module BUS_CONTROL(
-   // Clocks
-   input Clk,               
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input [128:0]X,          // Instruction decoder bus		
 	input T0,                // Cycle 0
@@ -1078,15 +1079,15 @@ assign ADH_ABH = ~ADH_ABHR;
 assign DL_DB   = ~DL_DBR;
 // Logics
 always @(posedge Clk) begin 				  
-       if (PHI2) begin
-       Z_ADH0R  <= ~( X[81] | X[82] );
+                 if (PHI2) begin
+                 Z_ADH0R  <= ~( X[81] | X[82] );
 		 Z_ADH17R <= ~( X[57] | ( X[81] | X[82] ));
 		 SB_ACR   <=   nSB_AC;
 		 ADL_ABLR <= ~( ~( T6 | T7 ) & ~( nREADY | ( X[71] | X[72] ))); 
-       AC_SBR   <= ~( AND | X[66] | X[67] | X[68] | ( ~X[64] & X[65] ));
+                 AC_SBR   <= ~( AND | X[66] | X[67] | X[68] | ( ~X[64] & X[65] ));
 		 SB_DBR   <= ~( T1 | X[80] | X[67] | ~( AND | ~ZTST ) | ( T6 & X[55] ) | ~( STXY & ~X[48] ));
 		 AC_DBR   <= ~( X[74] | ( X[79] & STOR ));
-       SB_ADHR  <= ~( X[93] | PGX );
+                 SB_ADHR  <= ~( X[93] | PGX );
 		 DL_ADHR  <= ~( DL_PCH | IND );
 		 ADH_ABHR <= ~( Z_ADL0 | ( ~X[93] & ( a | SBA )));
 		 DL_DBR   <= ~( b | T6 | X[80] | X[101] | ~( X[128] | ~( T0 | X[83] )));	 
@@ -1099,10 +1100,10 @@ endmodule
 // Interrupt control module
 //===============================================================================================
 module INT_RESET_CONTROL(
-   // Clocks
-   input Clk,               
-   input PHI1,              // phase PHI1	
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               
+        input PHI1,              // phase PHI1	
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input [128:0]X,          // Instruction decoder bus
 	input nREADY,            // "Processor not ready" signal	
@@ -1140,19 +1141,19 @@ assign B_OUT = ~( ~( BRK6E | BLATCH2 ) | DORES );
 assign Z_ADL0 = BRK5LATCH;
 // Logics
 always @(posedge Clk) begin 
-       if (PHI1) begin
-       BRK6LATCH1  <= ~( BRK5LATCH | ( nREADY & ~BRK6LATCH1 )); 
-       RESLATCH2   <= ~( BRK6E | ~( RESLATCH1 | RESLATCH2 ));
+                 if (PHI1) begin
+                 BRK6LATCH1  <= ~( BRK5LATCH | ( nREADY & ~BRK6LATCH1 )); 
+                 RESLATCH2   <= ~( BRK6E | ~( RESLATCH1 | RESLATCH2 ));
 		 NMIPLATCH   <= nNMIP;
 		 DELAYLATCH2 <= ~FF1LATCH;
 		 DONMILATCH  <= ~( nNMIP | ~BRK7LATCH | a );
 		 BRK6ELATCH  <= BRK6E;
 		 BLATCH1     <= ~( BRK6E | BLATCH2 );	 
 		 		     end	 
-       if (PHI2) begin
-       BRK5LATCH  <=  X[22] & ~nREADY;
+                 if (PHI2) begin
+                 BRK5LATCH  <=  X[22] & ~nREADY;
 		 BRK6LATCH2 <= ~BRK6LATCH1; 
-       RESLATCH1  <= RESP;
+                 RESLATCH1  <= RESP;
 		 BRK7LATCH  <= BRK7;
 		 FF2LATCH   <= a;
 		 FF1LATCH   <= nDONMI;
@@ -1168,9 +1169,9 @@ endmodule
 // Register management module
 //===============================================================================================
 module REGS_CONTROL(
-   // Clocks
-   input Clk,               // Clock signal
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               // Clock signal
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input [128:0]X,          // Instruction decoder bus		
 	input STOR,              // Stor operation
@@ -1205,13 +1206,13 @@ assign SB_S  = ~(  SB_SR | PHI2 );
 assign S_S   = ~( ~SB_SR | PHI2 );
 // Logics
 always @(posedge Clk) begin 			  
-       if (PHI2) begin
+                 if (PHI2) begin
 		 Y_SBR  <= ~( X[1] | X[2] | X[3]  | X[4]  | X[5]  | ( X[0]  &  STOR ) | ( X[6] &  X[7] ));
 		 X_SBR  <= ~( X[8] | X[9] | X[10] | X[11] | X[13] | ( X[12] &  STOR ) | ( X[6] & ~X[7] ));
 		 S_SB   <=    X[17];
 		 SB_XR  <= ~( X[14] | X[15] | X[16] );
 		 SB_YR  <= ~( X[18] | X[19] | X[20] );
-       S_ADLR <= ~(( ~nREADYR & X[21] ) | X[35] );
+                 S_ADLR <= ~(( ~nREADYR & X[21] ) | X[35] );
 		 SB_SR  <= ~( STKOP | X[13] | ~( ~X[48] | nREADY ));
 		           end					  
 		                end
@@ -1222,10 +1223,10 @@ endmodule
 // Program counter control module
 //===============================================================================================
 module PC_SETUP(
-   // Clocks
-   input Clk,               // Clock
-   input PHI1,              // phase PHI1	
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               // Clock
+        input PHI1,              // phase PHI1	
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input [128:0]X,          // Instruction decoder bus		
 	input T0,                // Cycle 0
@@ -1237,11 +1238,11 @@ module PC_SETUP(
 	output PC_DB,            // PC  to  DB  Bus
 	output PCH_DB,           // PCH to  DB  Bus	
 	output PCL_ADL,          // PCL to  ADL Bus	
-   output PCH_ADH,          // PCH to  ADH Bus
+        output PCH_ADH,          // PCH to  ADH Bus
 	output PCL_PCL,          // Data storage mode in counter bits PCL
 	output ADL_PCL,          // Loading data from the ADL Bus
 	output nADL_PCL,         //	
-   output DL_PCH,           // 	
+        output DL_PCH,           // 	
 	output ADH_PCH,          // Loading data from the ADH Bus	
 	output PCH_PCH,          // Data storage mode in counter bits PCH
 	output nPCH_PCH          //		
@@ -1278,10 +1279,10 @@ always @(posedge Clk) begin
        if (PHI2) begin
        PCL_DBR  <= ~PCL_DBR1;
        PCH_DBR  <= ~( X[77] | X[78] );
-		 PCL_ADLR <= nPCL_ADL;
-		 PCH_ADHR <= ~( X[93] | ~( X[73] | DL_PCH | nPCL_ADL ));
-		 ADL_PCLR <= nADL_PCL;
-		 ADH_PCHR <= nADH_PCH;
+       PCL_ADLR <= nPCL_ADL;
+       PCH_ADHR <= ~( X[93] | ~( X[73] | DL_PCH | nPCL_ADL ));
+       ADL_PCLR <= nADL_PCL;
+       ADH_PCHR <= nADH_PCH;
 		           end					  
 		                end
 // End of the program counter control module
@@ -1291,10 +1292,10 @@ endmodule
 // ALU control module
 //===============================================================================================
 module ALU_SETUP(
-   // Clocks
-   input Clk,               // Clock
-   input PHI1,              // phase PHI1	
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               // Clock
+        input PHI1,              // phase PHI1	
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input [128:0]X,          // Instruction decoder bus	
 	input nREADY,            // "Processor not ready" signal
@@ -1315,20 +1316,20 @@ module ALU_SETUP(
 	output NDB_ADD,          // ~DB Bus to ALU input
 	output DB_ADD,           //  DB Bus to ALU input
 	output ADL_ADD,          // ADL bus to ALU input
-   output AND,              // Logical AND
-   output reg ANDS,         // Logical AND
-   output reg ORS,          // Logical OR 
-   output reg nACIN,        // ALU input carry
-   output reg SRS,          // Shift right
-   output reg SUMS,	       // the result of the sum A+B	
-   output reg EORS,         // Exclusive OR
-   output ADD_SB06,         // ALU output bits 0-6 per SB bus	
-   output reg ADD_SB7,      // ALU output bit 7 to SB bus	
-   output ADD_ADL,          // ALU output to ADL bus
-   output reg nDSA,         // Perform correction after subtraction	
-   output reg nDAA,         // Perform correction after addition
+        output AND,              // Logical AND
+        output reg ANDS,         // Logical AND
+        output reg ORS,          // Logical OR 
+        output reg nACIN,        // ALU input carry
+        output reg SRS,          // Shift right
+        output reg SUMS,	 // the result of the sum A+B	
+        output reg EORS,         // Exclusive OR
+        output ADD_SB06,         // ALU output bits 0-6 per SB bus	
+        output reg ADD_SB7,      // ALU output bit 7 to SB bus	
+        output ADD_ADL,          // ALU output to ADL bus
+        output reg nDSA,         // Perform correction after subtraction	
+        output reg nDAA,         // Perform correction after addition
 	output INC_SB,           // SB Increment
-   output SR                // Shift right	
+        output SR                // Shift right	
 );
 // Variables
 reg Z_ADDR, NDB_ADDR, DB_ADDR, ADL_ADDR;           // ALU input latches control signal latches
@@ -1358,17 +1359,17 @@ assign ADD_ADL  = ~ADD_ADLR;
 // Logics
 always @(posedge Clk) begin 
        if (PHI1) begin
-       nACIN 	   <= ~( ACIN1 | ACIN2 | ACIN3 | ACIN4 );
-	    FFLATCH1   <= ( MUX_LATCH & COUT_LATCH )|( ~MUX_LATCH & FFLATCH2 );
-	    ANDS       <= ANDS1;
+                 nACIN 	    <= ~( ACIN1 | ACIN2 | ACIN3 | ACIN4 );
+	         FFLATCH1   <= ( MUX_LATCH & COUT_LATCH )|( ~MUX_LATCH & FFLATCH2 );
+	         ANDS       <= ANDS1;
 		 SUMS       <= SUMS1;
 		 ORS        <= ORS1;
 		 SRS        <= SRS1;
 		 EORS       <= EORS1;
-	    nDSA       <= nDSA1;
+	         nDSA       <= nDSA1;
 		 nDAA       <= nDAA1;
 		 		     end	                                                                        
-       if (PHI2) begin
+                 if (PHI2) begin
 		 ACIN1      <= ~( nADL_ADD | ~X[47] );
 		 ACIN2      <= INC_SB;
 		 ACIN3      <= BRX;
@@ -1381,11 +1382,11 @@ always @(posedge Clk) begin
 		 SUMS1      <= ~( X[29] | SR | AND | OR  );
 		 ORS1       <= OR;
 		 SRS1       <= SR;
-       EORS1      <= X[29];
+                 EORS1      <= X[29];
 		 ADD_SB06R  <= ~( T1 | T7 | PGX | STKOP | X[56] );
 		 ADD_SB7    <= ~( ~( T1 | T7 | PGX | STKOP | X[56] ) | ~( ~X[27] | ~SRS | FFLATCH1 ));
 		 ADD_ADLR   <= PGX | ~( X[84] | X[85] | X[86] | X[87] | X[88] | X[89] | X[26] );	
-       nDSA1      <= ~( X[51] & ~nD_OUT );
+                 nDSA1      <= ~( X[51] & ~nD_OUT );
 		 nDAA1      <= X[51] | ~( X[52] & ~nD_OUT );
 		 COUT_LATCH <= nC_OUT;
 		 MUX_LATCH  <= ~( ~SR | nREADYR );
@@ -1399,10 +1400,10 @@ endmodule
 // DISPATCH module
 //===============================================================================================
 module DISPATCH(
-   // Clocks
-   input Clk,               // Clock
-   input PHI1,              // phase PHI1	
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               // Clock
+        input PHI1,              // phase PHI1	
+        input PHI2,              // phase PHI2
 	// Inputs
 	input [128:0]X,          // Instruction decoder bus
 	input ACR,               //
@@ -1478,9 +1479,9 @@ assign n1_PC = ~( IPC1 & ( IPC2 | IPC3 ));
 assign nREADYR = RDYDELAY1;
 // Logics
 always @(posedge Clk) begin 
-       if (PHI1) begin
-       RDYDELAY1   <= nREADY; 
-       ACRL_LATCH1 <= ACRL1;
+                 if (PHI1) begin
+                 RDYDELAY1   <= nREADY; 
+                 ACRL_LATCH1 <= ACRL1;
 		 T61         <= ~( T67 | ( nREADY & T62 ));		 
 		 T7          <= ~T71;
 		 TRES2LATCH  <= nTRESX; 
@@ -1493,11 +1494,11 @@ always @(posedge Clk) begin
 		 IPC2        <= i2;
 		 IPC3        <= ~( nREADY | BRLATCH1 | IMPLIED );
 		 		     end	                                                                       
-       if (PHI2) begin
-       RDYDELAY2   <= RDYDELAY1;
-       ACRL2       <= ACRL_LATCH1;
-       T67         <= ~( nSHIFT | nMEMOP | nREADY );
-       T62         <= T6;
+                 if (PHI2) begin
+                 RDYDELAY2   <= RDYDELAY1;
+                 ACRL2       <= ACRL_LATCH1;
+                 T67         <= ~( nSHIFT | nMEMOP | nREADY );
+                 T62         <= T6;
 		 T71         <= ~( ~nREADY & T6 );
 		 FETCHLATCH  <= T1;
 		 TRESXLATCH1 <= ~( X[91] | X[92] );
@@ -1526,26 +1527,27 @@ module BUS_MUX(
 	input Z_ADL2,            // Clear bit 2 of the ADL bus
 	input Z_ADH0,            // Clear bit 0 of the ADH bus
 	input Z_ADH17,           // Clear bits 1-7 of the ADH bus
-   // Bus multiplexer control	
-	input	SB_DB,			    // Forwarding data between buses DB <-> SB
-	input	PCL_DB,			    // PCL to  DB  Bus
-	input	PCH_DB,			    // PCH to  DB  Bus
-	input	P_DB,			       // Flag data to DB Bus
-	input	AC_DB,			    // Accumulator to DB Bus
-	input	AC_SB,			    // Accumulator to SB Bus
-	input	ADD_ADL,			    // ALU output to ADL bus
+        // Bus multiplexer control	
+	input	SB_DB,			     // Forwarding data between buses DB <-> SB
+	input	PCL_DB,			     // PCL to  DB  Bus
+	input	PCH_DB,			     // PCH to  DB  Bus
+	input	P_DB,			     // Flag data to DB Bus
+	input	AC_DB,			     // Accumulator to DB Bus
+	input	AC_SB,			     // Accumulator to SB Bus
+	input	SB_AC,			     // SB Bus to Accumulator
+	input	ADD_ADL,			 // ALU output to ADL bus
 	input	ADD_SB06,			 // ALU output bits 0-6 per SB bus
 	input	ADD_SB7,		   	 // ALU output bit 7 to SB bus
-   input Y_SB,              // Y register to SB Bus
-   input X_SB,              // X register to SB Bus
-   input S_SB,              // S register to SB Bus	
-	input	SB_ADH,			    // Forwarding data between buses SB <-> ADH	 
-	input S_ADL,             // Register S to ADL Bus
-	input DL_ADL,            // DL latch value per ADL Bus
-	input DL_ADH,            // DL latch value per ADH Bus
-	input DL_DB,             // DL latch value per DB Bus	
-	input	PCL_ADL,			    // PCL to  ADL Bus
-	input	PCH_ADH,			    // PCH to  ADH Bus
+    input Y_SB,                  // Y register to SB Bus
+    input X_SB,                  // X register to SB Bus
+    input S_SB,                  // S register to SB Bus	
+	input SB_ADH,			     // Forwarding data between buses SB <-> ADH	 
+	input S_ADL,                 // Register S to ADL Bus
+	input DL_ADL,                // DL latch value per ADL Bus
+	input DL_ADH,                // DL latch value per ADH Bus
+	input DL_DB,                 // DL latch value per DB Bus	
+	input	PCL_ADL,			 // PCL to  ADL Bus
+	input	PCH_ADH,			 // PCH to  ADH Bus
 	// Input buses
 	input	[7:0]DL,		       // Input DатаLatch Bus
 	input	[7:0]PCL,          // LSB bus PC
@@ -1556,7 +1558,7 @@ module BUS_MUX(
 	input	[7:0]Y_REG,        // register Y
 	input	[7:0]X_REG,        // register X
 	input	[7:0]S_REG,        // Stack pointer
-	// Секция выходов
+	// Output buses
 	output [7:0]DB,	       // DB Bus
 	output [7:0]SB,	       // SB Bus
 	output [7:0]ADL,	       // ADL Bus
@@ -1564,6 +1566,8 @@ module BUS_MUX(
 );
 
 // Combinatorics
+wire AC_SB2;
+assign AC_SB2 = ~AC_SB | SB_AC;	
 // Intermediate buses
 wire [7:0]DBT;  
 wire [7:0]SBT;
@@ -1572,7 +1576,7 @@ wire [7:0]ADHT;
 // DBT bus multiplexer
 assign DBT[7:0]  = ( ~{8{AC_DB}} | ACC[7:0] ) & ( ~{8{P_DB}} | FLAG[7:0] ) & ( ~{8{DL_DB}} | DL[7:0] ) & ( ~{8{PCL_DB}} | PCL[7:0] ) & ( ~{8{PCH_DB}} | PCH[7:0] );
 // SBT bus multiplexer
-assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( ~{8{AC_SB}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
+assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( {8{AC_SB2}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
 // ADHT bus multiplexer
 assign ADHT[7:0] = ( ~{8{PCH_ADH}} | PCH[7:0] ) & ( ~{8{DL_ADH}} | DL[7:0] ) & { {7{ ~Z_ADH17 }}, ~Z_ADH0 };
 // SBH bus multiplexer
@@ -1593,9 +1597,9 @@ endmodule
 // ALU module
 //===============================================================================================
 module ALU (
-   // Clocks
-   input Clk,               // Clock
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               // Clock
+        input PHI2,              // phase PHI2
 	// Inputs
 	input Z_ADD,             // Reset input A of ALU
 	input [7:0]SB,           // SB bus
@@ -1604,7 +1608,7 @@ module ALU (
 	input NDB_ADD,           // ~DB Bus to ALU input
 	input	DB_ADD,            //  DB Bus to ALU input
 	input [7:0]ADL,          // ADL bus
-   input ADL_ADD,           // ADL bus to ALU input
+        input ADL_ADD,           // ADL bus to ALU input
 	input nACIN,             // ALU input carry
 	input ANDS,              // Logical AND result 
 	input ORS,               // Logical OR result
@@ -1617,7 +1621,7 @@ module ALU (
 	// Outputs
 	output reg [7:0]ACC,     // accumulator output
 	output reg [7:0]ADD,     // Output of the result of operations
-   output ACR,              // ALU carry output
+        output ACR,              // ALU carry output
 	output reg AVR           // ALU overflow output
 );
 // Variables
@@ -1687,9 +1691,9 @@ always @(posedge Clk) begin
 				       LATCH_C7  <= COUT[7];
 					    LATCH_DC7 <= DC7;
 								 AVR <=  ( COUT[6] & ORo[7] ) | ( ~COUT[6] & ~ANDo[7] );
-				       DAAL  <=  ( DCOUT3 & ~nDAA );
+		                 DAAL  <=  ( DCOUT3 & ~nDAA );
 						     DAAHR <= ~nDAA;
-				       DSAL  <= ~( DCOUT3 |  nDSA );
+						     DSAL  <= ~( DCOUT3 |  nDSA );
 						     DSAHR <=  nDSA;
 		                         end
                       end
@@ -1700,9 +1704,9 @@ endmodule
 // Program Counter (PC) Module
 //===============================================================================================
 module PC (
-   // Clocks
-   input Clk,               // Clock
-   input PHI2,              // phase PHI2
+        // Clocks
+        input Clk,               // Clock
+        input PHI2,              // phase PHI2
 	// Inputs	
 	input n1_PC,             // Input counter carry	
 	input PCL_PCL,           // PCL counter bit storage mode
@@ -1742,3 +1746,4 @@ always @(posedge Clk) begin
                       end
 // End of module Program Counter (PC)
 endmodule
+

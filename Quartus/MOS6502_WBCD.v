@@ -321,7 +321,8 @@ BUS_MUX MOD_BUS_MUX(
    PCH_DB,			    
    P_DB,			       
    AC_DB,			    
-   AC_SB,			    
+   AC_SB,
+   SB_AC,
    ADD_ADL,			   
    ADD_SB06,			 
    ADD_SB7,		   	 
@@ -1534,13 +1535,14 @@ module BUS_MUX(
 	input	P_DB,			       // Flag data to DB Bus
 	input	AC_DB,			    // Accumulator to DB Bus
 	input	AC_SB,			    // Accumulator to SB Bus
+	input	SB_AC,			    // SB Bus to Accumulator
 	input	ADD_ADL,			    // ALU output to ADL bus
 	input	ADD_SB06,			 // ALU output bits 0-6 per SB bus
 	input	ADD_SB7,		   	 // ALU output bit 7 to SB bus
-   input Y_SB,              // Y register to SB Bus
-   input X_SB,              // X register to SB Bus
-   input S_SB,              // S register to SB Bus	
-	input	SB_ADH,			    // Forwarding data between buses SB <-> ADH	 
+    input Y_SB,               // Y register to SB Bus
+    input X_SB,               // X register to SB Bus
+    input S_SB,               // S register to SB Bus	
+	input	SB_ADH,			 // Forwarding data between buses SB <-> ADH	 
 	input S_ADL,             // Register S to ADL Bus
 	input DL_ADL,            // DL latch value per ADL Bus
 	input DL_ADH,            // DL latch value per ADH Bus
@@ -1565,6 +1567,8 @@ module BUS_MUX(
 );
 
 // Combinatorics
+wire AC_SB2;
+assign AC_SB2 = ~AC_SB | SB_AC;	
 // Intermediate buses
 wire [7:0]DBT;  
 wire [7:0]SBT;
@@ -1573,7 +1577,7 @@ wire [7:0]ADHT;
 // DBT bus multiplexer
 assign DBT[7:0]  = ( ~{8{AC_DB}} | ACC[7:0] ) & ( ~{8{P_DB}} | FLAG[7:0] ) & ( ~{8{DL_DB}} | DL[7:0] ) & ( ~{8{PCL_DB}} | PCL[7:0] ) & ( ~{8{PCH_DB}} | PCH[7:0] );
 // SBT bus multiplexer
-assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( ~{8{AC_SB}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
+assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( {8{AC_SB2}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
 // ADHT bus multiplexer
 assign ADHT[7:0] = ( ~{8{PCH_ADH}} | PCH[7:0] ) & ( ~{8{DL_ADH}} | DL[7:0] ) & { {7{ ~Z_ADH17 }}, ~Z_ADH0 };
 // SBH bus multiplexer
@@ -1689,9 +1693,9 @@ always @(posedge Clk) begin
 				       LATCH_C7  <= COUT[7];
 					    //LATCH_DC7 <= DC7;
 								 AVR <=  ( COUT[6] & ORo[7] ) | ( ~COUT[6] & ~ANDo[7] );
-				       //DAAL  <=  ( DCOUT3 & ~nDAA );
+		                 //DAAL  <=  ( DCOUT3 & ~nDAA );
 						     //DAAHR <= ~nDAA;
-				       //DSAL  <= ~( DCOUT3 |  nDSA );
+						     //DSAL  <= ~( DCOUT3 |  nDSA );
 						     //DSAHR <=  nDSA;
 		                         end
                       end
@@ -1744,3 +1748,4 @@ always @(posedge Clk) begin
                       end
 // End of module Program Counter (PC)
 endmodule
+
