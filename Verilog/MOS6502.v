@@ -226,9 +226,9 @@ RANDOM_LOGIC MOD_RANDOM_LOGIC(
 	FLAG[7:0],        
 	Z_ADH0,           
 	Z_ADH17,          
-	SB_AC,            
-	ADL_ABL,          	
-	AC_SB,            
+	SB_AC, 
+	ADL_ABL, 
+	AC_SB,
 	SB_DB,            	
 	AC_DB,            
 	SB_ADH,           	 
@@ -320,7 +320,8 @@ BUS_MUX MOD_BUS_MUX(
    PCH_DB,			    
    P_DB,			       
    AC_DB,			    
-   AC_SB,			    
+   AC_SB,
+   SB_AC,
    ADD_ADL,			   
    ADD_SB06,			 
    ADD_SB7,		   	 
@@ -647,30 +648,30 @@ module RANDOM_LOGIC (
 	output Z_IR,             // BRK sequence injection
 	output FETCH,            // Opcode fetch
 	output P_DB,             // Flag data to DB Bus	
-        output PCL_DB,           // PCL to  DB  Bus
+    output PCL_DB,           // PCL to  DB  Bus
 	output PCH_DB,           // PCH to  DB  Bus		
 	output PCL_ADL,          // PCL to  ADL Bus
-        output PCH_ADH,          // PCH to  ADH Bus	
+    output PCH_ADH,          // PCH to  ADH Bus	
 	output PCL_PCL,          // Data storage mode in counter bits PCL
 	output ADL_PCL,          // Loading data from the ADL Bus	
 	output ADH_PCH,          // Loading data from the ADH Bus	
 	output PCH_PCH,          // Data storage mode in counter bits PCH	
 	output NDB_ADD,          // ~DB Bus to ALU input		
 	output DB_ADD,           //  DB Bus to ALU input	
-        output Z_ADD,            // Reset input A of ALU
+    output Z_ADD,            // Reset input A of ALU
 	output SB_ADD,           // SB bus to ALU input
 	output ADL_ADD,          // ADL bus to ALU input
-        output ANDS,             // Logical AND
+    output ANDS,             // Logical AND
 	output EORS,             // Exclusive OR
-        output ORS,              // Logical OR	
-        output nACIN,            // ALU input carry	
-        output SRS,              // Shift right
+    output ORS,              // Logical OR	
+    output nACIN,            // ALU input carry	
+    output SRS,              // Shift right
 	output SUMS,             // the result of the sum A+B	
-        output nDAA,             // Perform correction after addition
-        output ADD_SB7,          // ALU output bit 7 to SB bus	
-        output ADD_SB06,         // ALU output bits 0-6 per SB bus	
-        output ADD_ADL,          // ALU output to ADL bus
-        output nDSA,             // Perform correction after subtraction	
+    output nDAA,             // Perform correction after addition
+    output ADD_SB7,          // ALU output bit 7 to SB bus	
+    output ADD_SB06,         // ALU output bits 0-6 per SB bus	
+    output ADD_ADL,          // ALU output to ADL bus
+    output nDSA,             // Perform correction after subtraction	
 	output n1_PC             // PC input carry
 );
 // Module connections
@@ -1527,25 +1528,26 @@ module BUS_MUX(
 	input Z_ADH0,            // Clear bit 0 of the ADH bus
 	input Z_ADH17,           // Clear bits 1-7 of the ADH bus
         // Bus multiplexer control	
-	input	SB_DB,			    // Forwarding data between buses DB <-> SB
-	input	PCL_DB,			    // PCL to  DB  Bus
-	input	PCH_DB,			    // PCH to  DB  Bus
-	input	P_DB,			       // Flag data to DB Bus
-	input	AC_DB,			    // Accumulator to DB Bus
-	input	AC_SB,			    // Accumulator to SB Bus
-	input	ADD_ADL,			    // ALU output to ADL bus
+	input	SB_DB,			     // Forwarding data between buses DB <-> SB
+	input	PCL_DB,			     // PCL to  DB  Bus
+	input	PCH_DB,			     // PCH to  DB  Bus
+	input	P_DB,			     // Flag data to DB Bus
+	input	AC_DB,			     // Accumulator to DB Bus
+	input	AC_SB,			     // Accumulator to SB Bus
+	input	SB_AC,			     // SB Bus to Accumulator
+	input	ADD_ADL,			 // ALU output to ADL bus
 	input	ADD_SB06,			 // ALU output bits 0-6 per SB bus
 	input	ADD_SB7,		   	 // ALU output bit 7 to SB bus
-        input Y_SB,              // Y register to SB Bus
-        input X_SB,              // X register to SB Bus
-        input S_SB,              // S register to SB Bus	
-	input	SB_ADH,			    // Forwarding data between buses SB <-> ADH	 
-	input S_ADL,             // Register S to ADL Bus
-	input DL_ADL,            // DL latch value per ADL Bus
-	input DL_ADH,            // DL latch value per ADH Bus
-	input DL_DB,             // DL latch value per DB Bus	
-	input	PCL_ADL,			    // PCL to  ADL Bus
-	input	PCH_ADH,			    // PCH to  ADH Bus
+    input Y_SB,                  // Y register to SB Bus
+    input X_SB,                  // X register to SB Bus
+    input S_SB,                  // S register to SB Bus	
+	input SB_ADH,			     // Forwarding data between buses SB <-> ADH	 
+	input S_ADL,                 // Register S to ADL Bus
+	input DL_ADL,                // DL latch value per ADL Bus
+	input DL_ADH,                // DL latch value per ADH Bus
+	input DL_DB,                 // DL latch value per DB Bus	
+	input	PCL_ADL,			 // PCL to  ADL Bus
+	input	PCH_ADH,			 // PCH to  ADH Bus
 	// Input buses
 	input	[7:0]DL,		       // Input DатаLatch Bus
 	input	[7:0]PCL,          // LSB bus PC
@@ -1564,6 +1566,8 @@ module BUS_MUX(
 );
 
 // Combinatorics
+wire AC_SB2;
+assign AC_SB2 = ~AC_SB | SB_AC;	
 // Intermediate buses
 wire [7:0]DBT;  
 wire [7:0]SBT;
@@ -1572,7 +1576,7 @@ wire [7:0]ADHT;
 // DBT bus multiplexer
 assign DBT[7:0]  = ( ~{8{AC_DB}} | ACC[7:0] ) & ( ~{8{P_DB}} | FLAG[7:0] ) & ( ~{8{DL_DB}} | DL[7:0] ) & ( ~{8{PCL_DB}} | PCL[7:0] ) & ( ~{8{PCH_DB}} | PCH[7:0] );
 // SBT bus multiplexer
-assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( ~{8{AC_SB}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
+assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( {8{AC_SB2}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
 // ADHT bus multiplexer
 assign ADHT[7:0] = ( ~{8{PCH_ADH}} | PCH[7:0] ) & ( ~{8{DL_ADH}} | DL[7:0] ) & { {7{ ~Z_ADH17 }}, ~Z_ADH0 };
 // SBH bus multiplexer
@@ -1742,3 +1746,4 @@ always @(posedge Clk) begin
                       end
 // End of module Program Counter (PC)
 endmodule
+
