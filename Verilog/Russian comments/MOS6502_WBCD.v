@@ -321,7 +321,8 @@ BUS_MUX MOD_BUS_MUX(
    PCH_DB,			    
    P_DB,			       
    AC_DB,			    
-   AC_SB,			    
+   AC_SB,
+   SB_AC,
    ADD_ADL,			   
    ADD_SB06,			 
    ADD_SB7,		   	 
@@ -1535,6 +1536,7 @@ module BUS_MUX(
 	input	P_DB,			       // Данные флагов на шину DB
 	input	AC_DB,			    // Данные аккумулятора на шину DB
 	input	AC_SB,			    // Данные аккумулятора на шину SB
+	input	SB_AC,			    // Данные SB на аккумулятор
 	input	ADD_ADL,			    // Данные АЛУ на шину ADL
 	input	ADD_SB06,			 // Данные АЛУ биты 0-6 на шину SB
 	input	ADD_SB7,		   	 // Данные АЛУ бит  7 на шину SB
@@ -1564,8 +1566,9 @@ module BUS_MUX(
 	output [7:0]ADL,	       // Выход шины ADL
 	output [7:0]ADH 	       // Выход шины ADH		
 );
-
 // Комбинаторика
+wire AC_SB2;
+assign AC_SB2 = ~AC_SB | SB_AC;		
 // Промежуточные шины
 wire [7:0]DBT;  
 wire [7:0]SBT;
@@ -1574,7 +1577,7 @@ wire [7:0]ADHT;
 // Мультиплексор промежуточной шины DBT
 assign DBT[7:0]  = ( ~{8{AC_DB}} | ACC[7:0] ) & ( ~{8{P_DB}} | FLAG[7:0] ) & ( ~{8{DL_DB}} | DL[7:0] ) & ( ~{8{PCL_DB}} | PCL[7:0] ) & ( ~{8{PCH_DB}} | PCH[7:0] );
 // Мультиплексор промежуточной шины SBT
-assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( ~{8{AC_SB}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
+assign SBT[7:0]  = ( ~{8{X_SB}} | X_REG[7:0] ) & ( ~{8{Y_SB}} | Y_REG[7:0] ) & ( ~{8{S_SB}} | S_REG[7:0] ) & ( {8{AC_SB2}} | ACC[7:0] ) & { ~ADD_SB7 | ADD[7], ~{7{ADD_SB06}} | ADD[6:0]}; 
 // Мультиплексор промежуточной шины ADHT
 assign ADHT[7:0] = ( ~{8{PCH_ADH}} | PCH[7:0] ) & ( ~{8{DL_ADH}} | DL[7:0] ) & { ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH17, ~Z_ADH0 };
 // Мультиплексор промежуточной шины SBH
@@ -1586,10 +1589,9 @@ assign SB[7:0]   =  SB_DB  ? ( DBT[7:0]  & SBH[7:0] ) : SBH[7:0];
 // Мультиплексор шины ADH
 assign ADH[7:0]  =  SB_ADH ? ( ADHT[7:0] & SBT[7:0] ) : ADHT[7:0];
 // Мультиплексор шины ADL
-assign ADL[7:0]  = ( ~{8{S_ADL}} | S_REG[7:0] ) & ( ~{8{ADD_ADL}} | ADD[7:0] ) & ( ~{8{PCL_ADL}} | PCL[7:0] ) & ( ~{8{DL_ADL}} | DL[7:0] ) & { 5'h1f, ~Z_ADL2, ~Z_ADL1, ~Z_ADL0 };				
+assign ADL[7:0]  = ( ~{8{S_ADL}} | S_REG[7:0] ) & ( ~{8{ADD_ADL}} | ADD[7:0] ) & ( ~{8{PCL_ADL}} | PCL[7:0] ) & ( ~{8{DL_ADL}} | DL[7:0] ) & { 5'h1f, ~Z_ADL2, ~Z_ADL1, ~Z_ADL0 };					
 // Конец модуля BUS_MUX
 endmodule
-
 //===============================================================================================
 // Модуль АЛУ
 //===============================================================================================
@@ -1744,3 +1746,4 @@ always @(posedge Clk) begin
                       end
 // Конец модуля Program counter
 endmodule
+
