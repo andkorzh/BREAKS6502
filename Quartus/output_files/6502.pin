@@ -59,20 +59,20 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 CHIP  "6502"  ASSIGNED TO AN: EP2C5T144C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 1         : input  : 3.3-V LVTTL       :         : 1         : N              
 ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 2         : input  : 3.3-V LVTTL       :         : 1         : N              
-RDY                          : 3         : input  : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 3         :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 4         :        :                   :         : 1         :                
 VCCIO1                       : 5         : power  :                   : 3.3V    : 1         :                
 GND                          : 6         : gnd    :                   :         :           :                
-DOUT[2]                      : 7         : output : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 7         :        :                   :         : 1         :                
 RW                           : 8         : output : 3.3-V LVTTL       :         : 1         : N              
-DOUT[4]                      : 9         : output : 3.3-V LVTTL       :         : 1         : N              
+DIN[1]                       : 9         : input  : 3.3-V LVTTL       :         : 1         : N              
 TDO                          : 10        : output :                   :         : 1         :                
 TMS                          : 11        : input  :                   :         : 1         :                
 TCK                          : 12        : input  :                   :         : 1         :                
@@ -90,7 +90,7 @@ VCCIO1                       : 23        : power  :                   : 3.3V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : 24        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 25        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 26        :        :                   :         : 1         :                
-SYNC                         : 27        : output : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 27        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 28        :        :                   :         : 1         :                
 VCCIO1                       : 29        : power  :                   : 3.3V    : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 30        :        :                   :         : 1         :                
@@ -110,27 +110,27 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 43        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 44        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 45        :        :                   :         : 4         :                
 VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
-A[3]                         : 47        : output : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 47        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 48        :        :                   :         : 4         :                
 GND                          : 49        : gnd    :                   :         :           :                
 VCCINT                       : 50        : power  :                   : 1.2V    :           :                
-PHI0                         : 51        : input  : 3.3-V LVTTL       :         : 4         : N              
-PHI1                         : 52        : output : 3.3-V LVTTL       :         : 4         : N              
-A[2]                         : 53        : output : 3.3-V LVTTL       :         : 4         : N              
+A[15]                        : 51        : output : 3.3-V LVTTL       :         : 4         : N              
+A[14]                        : 52        : output : 3.3-V LVTTL       :         : 4         : N              
+A[13]                        : 53        : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : 54        : power  :                   : 3.3V    : 4         :                
-PHI2                         : 55        : output : 3.3-V LVTTL       :         : 4         : N              
+A[8]                         : 55        : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : 56        : gnd    :                   :         :           :                
-A[6]                         : 57        : output : 3.3-V LVTTL       :         : 4         : N              
-A[5]                         : 58        : output : 3.3-V LVTTL       :         : 4         : N              
-A[7]                         : 59        : output : 3.3-V LVTTL       :         : 4         : N              
-A[4]                         : 60        : output : 3.3-V LVTTL       :         : 4         : N              
+A[9]                         : 57        : output : 3.3-V LVTTL       :         : 4         : N              
+DIN[0]                       : 58        : input  : 3.3-V LVTTL       :         : 4         : N              
+A[10]                        : 59        : output : 3.3-V LVTTL       :         : 4         : N              
+A[6]                         : 60        : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : 61        : gnd    :                   :         :           :                
 VCCINT                       : 62        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 63        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 64        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 65        :        :                   :         : 4         :                
+DIN[4]                       : 63        : input  : 3.3-V LVTTL       :         : 4         : N              
+SO                           : 64        : input  : 3.3-V LVTTL       :         : 4         : N              
+A[11]                        : 65        : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : 66        : power  :                   : 3.3V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 67        :        :                   :         : 4         :                
+A[12]                        : 67        : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : 68        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 69        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 70        :        :                   :         : 4         :                
@@ -149,25 +149,25 @@ nSTATUS                      : 82        :        :                   :         
 CONF_DONE                    : 83        :        :                   :         : 3         :                
 MSEL1                        : 84        :        :                   :         : 3         :                
 MSEL0                        : 85        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 3         :                
+A[7]                         : 86        : output : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 3         :                
 DIN[5]                       : 88        : input  : 3.3-V LVTTL       :         : 3         : N              
 DIN[6]                       : 89        : input  : 3.3-V LVTTL       :         : 3         : N              
 DIN[7]                       : 90        : input  : 3.3-V LVTTL       :         : 3         : N              
 nRES                         : 91        : input  : 3.3-V LVTTL       :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : 92        :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 93        :        :                   :         : 3         :                
-A[14]                        : 94        : output : 3.3-V LVTTL       :         : 3         : N              
+DOUT[1]                      : 92        : output : 3.3-V LVTTL       :         : 3         : N              
+DOUT[4]                      : 93        : output : 3.3-V LVTTL       :         : 3         : N              
+nIRQ                         : 94        : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : 95        : power  :                   : 3.3V    : 3         :                
-A[15]                        : 96        : output : 3.3-V LVTTL       :         : 3         : N              
-A[9]                         : 97        : output : 3.3-V LVTTL       :         : 3         : N              
+DOUT[5]                      : 96        : output : 3.3-V LVTTL       :         : 3         : N              
+A[4]                         : 97        : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : 98        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 99        :        :                   :         : 3         :                
+DOUT[3]                      : 99        : output : 3.3-V LVTTL       :         : 3         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 100       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 101       :        :                   :         : 3         :                
 VCCIO3                       : 102       : power  :                   : 3.3V    : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 103       :        :                   :         : 3         :                
-A[13]                        : 104       : output : 3.3-V LVTTL       :         : 3         : N              
+DOUT[2]                      : 103       : output : 3.3-V LVTTL       :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 104       :        :                   :         : 3         :                
 GND                          : 105       : gnd    :                   :         :           :                
 GND_PLL2                     : 106       : gnd    :                   :         :           :                
 VCCD_PLL2                    : 107       : power  :                   : 1.2V    :           :                
@@ -177,34 +177,34 @@ GNDA_PLL2                    : 110       : gnd    :                   :         
 GND                          : 111       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 112       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 113       :        :                   :         : 2         :                
-A[8]                         : 114       : output : 3.3-V LVTTL       :         : 2         : N              
-DIN[3]                       : 115       : input  : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 114       :        :                   :         : 2         :                
+DOUT[6]                      : 115       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 GND                          : 117       : gnd    :                   :         :           :                
-A[11]                        : 118       : output : 3.3-V LVTTL       :         : 2         : N              
-DIN[1]                       : 119       : input  : 3.3-V LVTTL       :         : 2         : N              
-DIN[4]                       : 120       : input  : 3.3-V LVTTL       :         : 2         : N              
-DIN[2]                       : 121       : input  : 3.3-V LVTTL       :         : 2         : N              
-A[10]                        : 122       : output : 3.3-V LVTTL       :         : 2         : N              
+DOUT[0]                      : 118       : output : 3.3-V LVTTL       :         : 2         : N              
+DOUT[7]                      : 119       : output : 3.3-V LVTTL       :         : 2         : N              
+DIN[2]                       : 120       : input  : 3.3-V LVTTL       :         : 2         : N              
+A[5]                         : 121       : output : 3.3-V LVTTL       :         : 2         : N              
+A[3]                         : 122       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : 123       : gnd    :                   :         :           :                
 VCCINT                       : 124       : power  :                   : 1.2V    :           :                
-DIN[0]                       : 125       : input  : 3.3-V LVTTL       :         : 2         : N              
-A[12]                        : 126       : output : 3.3-V LVTTL       :         : 2         : N              
+A[1]                         : 125       : output : 3.3-V LVTTL       :         : 2         : N              
+A[2]                         : 126       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 127       : power  :                   : 3.3V    : 2         :                
 GND                          : 128       : gnd    :                   :         :           :                
-A[1]                         : 129       : output : 3.3-V LVTTL       :         : 2         : N              
+SYNC                         : 129       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : 130       : gnd    :                   :         :           :                
 VCCINT                       : 131       : power  :                   : 1.2V    :           :                
-A[0]                         : 132       : output : 3.3-V LVTTL       :         : 2         : N              
-DOUT[7]                      : 133       : output : 3.3-V LVTTL       :         : 2         : N              
-DOUT[3]                      : 134       : output : 3.3-V LVTTL       :         : 2         : N              
-DOUT[0]                      : 135       : output : 3.3-V LVTTL       :         : 2         : N              
-DOUT[6]                      : 136       : output : 3.3-V LVTTL       :         : 2         : N              
-SO                           : 137       : input  : 3.3-V LVTTL       :         : 2         : N              
+RDY                          : 132       : input  : 3.3-V LVTTL       :         : 2         : N              
+A[0]                         : 133       : output : 3.3-V LVTTL       :         : 2         : N              
+DIN[3]                       : 134       : input  : 3.3-V LVTTL       :         : 2         : N              
+PHI0                         : 135       : input  : 3.3-V LVTTL       :         : 2         : N              
+PHI1                         : 136       : output : 3.3-V LVTTL       :         : 2         : N              
+PHI2                         : 137       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 138       : power  :                   : 3.3V    : 2         :                
 nNMI                         : 139       : input  : 3.3-V LVTTL       :         : 2         : N              
 GND                          : 140       : gnd    :                   :         :           :                
-nIRQ                         : 141       : input  : 3.3-V LVTTL       :         : 2         : N              
-DOUT[5]                      : 142       : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 141       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : 142       :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 143       :        :                   :         : 2         :                
-DOUT[1]                      : 144       : output : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 144       :        :                   :         : 2         :                

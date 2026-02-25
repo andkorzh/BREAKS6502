@@ -1,6 +1,6 @@
 Analysis & Synthesis report for 6502
-Sat Jul 20 01:28:16 2024
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Feb 25 15:17:10 2026
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -16,10 +16,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "RANDOM_LOGIC:MOD_RANDOM_LOGIC"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
- 14. Analysis & Synthesis Suppressed Messages
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,13 +44,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 20 01:28:16 2024           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 25 15:17:10 2026           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; 6502                                            ;
 ; Top-level Entity Name              ; MOS6502                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 705                                             ;
-;     Total combinational functions  ; 636                                             ;
+; Total logic elements               ; 638                                             ;
+;     Total combinational functions  ; 569                                             ;
 ;     Dedicated logic registers      ; 287                                             ;
 ; Total registers                    ; 287                                             ;
 ; Total pins                         ; 43                                              ;
@@ -153,18 +152,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 12     ;
+; Number detected on machine ; 16     ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                      ;
-+----------------------------------+-----------------+------------------------+-------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path        ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------+---------+
-; MOS6502.v                        ; yes             ; User Verilog HDL File  ; C:/altera/13.0sp1/6502_my/MOS6502.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; MOS6502.v                        ; yes             ; User Verilog HDL File  ; C:/BREAKS6502-main/BREAKS6502-main/Quartus/MOS6502.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -172,16 +171,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 705   ;
+; Estimated Total logic elements              ; 638   ;
 ;                                             ;       ;
-; Total combinational functions               ; 636   ;
+; Total combinational functions               ; 569   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 402   ;
-;     -- 3 input functions                    ; 152   ;
-;     -- <=2 input functions                  ; 82    ;
+;     -- 4 input functions                    ; 323   ;
+;     -- 3 input functions                    ; 162   ;
+;     -- <=2 input functions                  ; 84    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 636   ;
+;     -- normal mode                          ; 569   ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 287   ;
@@ -192,8 +191,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; Clk   ;
 ; Maximum fan-out                             ; 287   ;
-; Total fan-out                               ; 3140  ;
-; Average fan-out                             ; 3.25  ;
+; Total fan-out                               ; 2858  ;
+; Average fan-out                             ; 3.18  ;
 +---------------------------------------------+-------+
 
 
@@ -202,21 +201,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
-; |MOS6502                                        ; 636 (3)           ; 287 (71)     ; 0           ; 0            ; 0       ; 0         ; 43   ; 0            ; |MOS6502                                                                       ; work         ;
-;    |ALU:MOD_ALU|                                ; 94 (94)           ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|ALU:MOD_ALU                                                           ; work         ;
-;    |BUS_MUX:MOD_BUS_MUX|                        ; 197 (197)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|BUS_MUX:MOD_BUS_MUX                                                   ; work         ;
-;    |DECODER:MOD_DECODER|                        ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|DECODER:MOD_DECODER                                                   ; work         ;
+; |MOS6502                                        ; 569 (11)          ; 287 (71)     ; 0           ; 0            ; 0       ; 0         ; 43   ; 0            ; |MOS6502                                                                       ; work         ;
+;    |ALU:MOD_ALU|                                ; 92 (92)           ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|ALU:MOD_ALU                                                           ; work         ;
+;    |BUS_MUX:MOD_BUS_MUX|                        ; 129 (129)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|BUS_MUX:MOD_BUS_MUX                                                   ; work         ;
+;    |DECODER:MOD_DECODER|                        ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|DECODER:MOD_DECODER                                                   ; work         ;
 ;    |EXTRA_COUNTER:MOD_EXTRA_COUNTER|            ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|EXTRA_COUNTER:MOD_EXTRA_COUNTER                                       ; work         ;
 ;    |PC:MOD_PC|                                  ; 37 (37)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|PC:MOD_PC                                                             ; work         ;
 ;    |PREDECODE_IR:MOD_PREDECODE_IR|              ; 13 (13)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|PREDECODE_IR:MOD_PREDECODE_IR                                         ; work         ;
-;    |RANDOM_LOGIC:MOD_RANDOM_LOGIC|              ; 243 (0)           ; 129 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC                                         ; work         ;
+;    |RANDOM_LOGIC:MOD_RANDOM_LOGIC|              ; 241 (0)           ; 129 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC                                         ; work         ;
 ;       |ALU_SETUP:MOD_ALU_SETUP|                 ; 48 (48)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|ALU_SETUP:MOD_ALU_SETUP                 ; work         ;
-;       |BUS_CONTROL:MOD_BUS_CONTROL|             ; 40 (40)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL             ; work         ;
-;       |DISPATCH:MOD_DISPATCH|                   ; 46 (46)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH                   ; work         ;
-;       |FLAGS:MOD_FLAGS|                         ; 39 (39)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS                         ; work         ;
-;       |INT_RESET_CONTROL:MOD_INT_RESET_CONTROL| ; 17 (17)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL ; work         ;
+;       |BUS_CONTROL:MOD_BUS_CONTROL|             ; 38 (38)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|BUS_CONTROL:MOD_BUS_CONTROL             ; work         ;
+;       |DISPATCH:MOD_DISPATCH|                   ; 48 (48)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|DISPATCH:MOD_DISPATCH                   ; work         ;
+;       |FLAGS:MOD_FLAGS|                         ; 37 (37)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|FLAGS:MOD_FLAGS                         ; work         ;
+;       |INT_RESET_CONTROL:MOD_INT_RESET_CONTROL| ; 16 (16)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|INT_RESET_CONTROL:MOD_INT_RESET_CONTROL ; work         ;
 ;       |PC_SETUP:MOD_PC_SETUP|                   ; 16 (16)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|PC_SETUP:MOD_PC_SETUP                   ; work         ;
-;       |REGS_CONTROL:MOD_REGS_CONTROL|           ; 37 (37)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL           ; work         ;
+;       |REGS_CONTROL:MOD_REGS_CONTROL|           ; 38 (38)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MOS6502|RANDOM_LOGIC:MOD_RANDOM_LOGIC|REGS_CONTROL:MOD_REGS_CONTROL           ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -253,17 +252,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MOS6502|ALU:MOD_ALU|BI[5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MOS6502|ALU:MOD_ALU|BI[1] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "RANDOM_LOGIC:MOD_RANDOM_LOGIC"                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; S_S  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -279,9 +269,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 20 01:28:13 2024
+    Info: Processing started: Wed Feb 25 15:17:08 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 6502 -c 6502
 Info (12021): Found 15 design units, including 15 entities, in source file mos6502.v
     Info (12023): Found entity 1: MOS6502
@@ -314,23 +304,23 @@ Info (12128): Elaborating entity "DISPATCH" for hierarchy "RANDOM_LOGIC:MOD_RAND
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:MOD_ALU"
 Info (12128): Elaborating entity "BUS_MUX" for hierarchy "BUS_MUX:MOD_BUS_MUX"
 Info (12128): Elaborating entity "PC" for hierarchy "PC:MOD_PC"
-Info (144001): Generated suppressed messages file C:/altera/13.0sp1/6502_my/output_files/6502.map.smsg
+Info (144001): Generated suppressed messages file C:/BREAKS6502-main/BREAKS6502-main/Quartus/output_files/6502.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 819 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 752 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 776 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4599 megabytes
-    Info: Processing ended: Sat Jul 20 01:28:16 2024
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (21061): Implemented 709 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 363 megabytes
+    Info: Processing ended: Wed Feb 25 15:17:10 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/altera/13.0sp1/6502_my/output_files/6502.map.smsg.
+The suppressed messages can be found in C:/BREAKS6502-main/BREAKS6502-main/Quartus/output_files/6502.map.smsg.
 
 
