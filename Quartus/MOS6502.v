@@ -419,25 +419,11 @@ reg T1_LATCH;           // Latch T1
 reg [3:0]LATCH1;			// 1st shift register bit latch
 reg [3:0]LATCH2;			// 2nd shift register bit latch
 // Combinatorics   
-assign nT2 = TRES2 | LATCH1[0];
-assign nT3 = TRES2 | LATCH1[1];
-assign nT4 = TRES2 | LATCH1[2];
-assign nT5 = TRES2 | LATCH1[3];
+assign {nT5, nT4, nT3, nT2} = {4{ TRES2 }} | LATCH1[3:0];
 // Logics
 always @(posedge Clk) begin
-                 if (PHI1) begin
-                 LATCH1[0]  <= ( ~nREADY & T1_LATCH  )|( nREADY & ( LATCH2[0]));
-                 LATCH1[1]  <= ( ~nREADY & LATCH2[0] )|( nREADY & ( LATCH2[1]));
-		 LATCH1[2]  <= ( ~nREADY & LATCH2[1] )|( nREADY & ( LATCH2[2]));
-		 LATCH1[3]  <= ( ~nREADY & LATCH2[2] )|( nREADY & ( LATCH2[3]));
-		           end		  
-		 if (PHI2) begin
-		 T1_LATCH   <= ~T1;		 
-		 LATCH2[0]  <= nT2;
-		 LATCH2[1]  <= nT3;
-		 LATCH2[2]  <= nT4;
-		 LATCH2[3]  <= nT5;
-		           end
+       if (PHI1)  LATCH1[3:0] <= nREADY ? LATCH2[3:0] : {LATCH2[2:0], T1_LATCH};
+       if (PHI2) {LATCH2[3:0], T1_LATCH} <= { nT5, nT4, nT3, nT2, ~T1 };
                       end
 // End of the extended cycle counter module
 endmodule
