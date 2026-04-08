@@ -36,7 +36,8 @@ module MOS6502 (
    // Такты
    input Clk,               
    input PHI0,              // Такт PHI0
-   // Входы	
+   // Входы
+	input BCD_OFF,           // BCD коррекция отключена
 	input SO,                // Вход сихронизации		
 	input nNMI,              // Вход немаскируемого прерывания	
 	input nIRQ,              // Вход маскируемого прерывания
@@ -284,8 +285,8 @@ RANDOM_LOGIC MOD_RANDOM_LOGIC(
 );	
 
 ALU MOD_ALU(
-   Clk,               
-   PHI2,              
+    Clk,               
+    PHI2,              
 	Z_ADD,             
 	SB[7:0],           
 	SB_ADD,            
@@ -293,19 +294,19 @@ ALU MOD_ALU(
 	NDB_ADD,           
 	DB_ADD,            
 	ADL[7:0],          
-   ADL_ADD,           
+    ADL_ADD,           
 	nACIN,             
 	ANDS,              
 	ORS,              
 	EORS,              
 	SRS,
-   SUMS,	
+    SUMS,	
 	SB_AC,            
-	nDAA,              
-	nDSA,              
+    BCD_OFF ? 1'b1 : nDAA,
+    BCD_OFF ? 1'b1 : nDSA,              
 	ACC[7:0],          
 	ADD[7:0],          
-   ACR,               
+    ACR,               
 	AVR                
 );	
 
@@ -1638,22 +1639,15 @@ assign ACR = LATCH_C7 | LATCH_DC7;
 wire DAAH, DSAH;
 assign DAAH =    ACR & DAAHR;
 assign DSAH = ~( ACR | DSAHR );
-wire b0,b1,b2,b3,b4,b5; // промежуточные сигналы BCD
-assign b0 = DAAL | DSAL;
-assign b1 = (( DAAL &  ~ADD[1] )           | ( DSAL & ADD[1] ));
-assign b2 = (( DAAL & ( ADD[1] | ADD[2] )) | ( DSAL & ~( ADD[1] & ADD[2] )));
-assign b3 = DAAH | DSAH;
-assign b4 = (( DAAH &  ~ADD[5] )           | ( DSAH & ADD[5] ));
-assign b5 = (( DAAH & ( ADD[5] | ADD[6] )) | ( DSAH & ~( ADD[5] & ADD[6] )));
+wire [5:0]bcd;       // промежуточные сигналы BCD
+assign bcd[0] = DAAL | DSAL;
+assign bcd[1] = (( DAAL &  ~ADD[1] )           | ( DSAL & ADD[1] ));
+assign bcd[2] = (( DAAL & ( ADD[1] | ADD[2] )) | ( DSAL & ~( ADD[1] & ADD[2] )));
+assign bcd[3] = DAAH | DSAH;
+assign bcd[4] = (( DAAH &  ~ADD[5] )           | ( DSAH & ADD[5] ));
+assign bcd[5] = (( DAAH & ( ADD[5] | ADD[6] )) | ( DSAH & ~( ADD[5] & ADD[6] )));
 wire [7:0]BCDRES;       // Выход схемы десятичной коррекции
-assign BCDRES[0] =  SB[0];
-assign BCDRES[1] =  SB[1] ^ b0;
-assign BCDRES[2] =  SB[2] ^ b1;
-assign BCDRES[3] =  SB[3] ^ b2;
-assign BCDRES[4] =  SB[4];
-assign BCDRES[5] =  SB[5] ^ b3;
-assign BCDRES[6] =  SB[6] ^ b4;
-assign BCDRES[7] =  SB[7] ^ b5;
+assign BCDRES[7:0] = { SB[7:5] ^ bcd[5:3], SB[4], SB[3:1] ^ bcd[2:0], SB[0] };
 // BCD CARRY
 wire DC3,DC7; 
 wire a,b,c,d,e,f,g; // промежуточные сигналы BCD CARRY
