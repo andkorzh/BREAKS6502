@@ -36,7 +36,8 @@ module MOS6502 (
    // Clocks                // Clock
    input Clk,               
    input PHI0,              // phase PHI0
-   // Inputs	
+   // Inputs
+   input BCD_OFF,           // Disable BCD correction
    input SO,                // Sync input		
    input nNMI,              // Non-maskable interrupt input	
    input nIRQ,              // Maskable interrupt input
@@ -284,8 +285,8 @@ RANDOM_LOGIC MOD_RANDOM_LOGIC(
 );	
 
 ALU MOD_ALU(
-        Clk,               
-        PHI2,              
+    Clk,               
+    PHI2,              
 	Z_ADD,             
 	SB[7:0],           
 	SB_ADD,            
@@ -293,19 +294,19 @@ ALU MOD_ALU(
 	NDB_ADD,           
 	DB_ADD,            
 	ADL[7:0],          
-        ADL_ADD,           
+    ADL_ADD,           
 	nACIN,             
 	ANDS,              
 	ORS,              
 	EORS,              
 	SRS,
-        SUMS,	
+    SUMS,	
 	SB_AC,            
-	nDAA,              
-	nDSA,              
+	BCD_OFF ? 1'b1 : nDAA,
+    BCD_OFF ? 1'b1 : nDSA,              
 	ACC[7:0],          
 	ADD[7:0],          
-        ACR,               
+    ACR,               
 	AVR                
 );	
 
