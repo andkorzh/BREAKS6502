@@ -121,7 +121,7 @@ wire ADD_SB7;               // Бит    7 на шину SB
 wire ADD_SB06;              // Биты 0-6 на шину SB
 wire ADD_ADL;               // Выход АЛУ на шину ADL
 wire nDSA;                  // Выполнить коррекцию после вычитания
-wire n1_PC;                 // Входной перенос PC
+wire I_PC;                  // Входной перенос PC
 
 // Переменные
 reg nNMIP, nIRQPR1, nIRQP, RESPR1, RESPR2;
@@ -281,7 +281,7 @@ ADD_SB7,
 ADD_SB06,
 ADD_ADL,
 nDSA,
-n1_PC
+I_PC
 );
 
 BUS_MUX MOD_BUS_MUX(
@@ -352,7 +352,7 @@ AVR
 PC MOD_PC(
 Clk,
 PHI2,
-n1_PC,
+I_PC,
 PCL_PCL,
 ADL_PCL,
 ADL[7:0],
@@ -654,7 +654,7 @@ output ADD_SB7,    // Бит    7 на шину SB
 output ADD_SB06,   // Биты 0-6 на шину SB
 output ADD_ADL,    // Выход АЛУ на шину ADL
 output nDSA,       // Выполнить коррекцию после вычитания
-output n1_PC       // Входной перенос PC
+output I_PC        // Входной перенос PC
 );
 // Связи модулей
 wire BRK6E;
@@ -834,7 +834,7 @@ T1,
 nT0,
 T0,
 nT1X,
-n1_PC
+I_PC
 );
 
 // Модуль ФЛАГОВ
@@ -1227,7 +1227,7 @@ output T1,               // Цикл  1
 output nT0,              // Цикл ~0
 output T0,               // Цикл  0
 output nT1X,             // Цикл ~T1X
-output n1_PC             // Входной перенос PC
+output I_PC              // Входной перенос PC
 );
 // Переменные
 reg RDYDELAY1, RDYDELAY2, nREADY2, WRLATCH;
@@ -1259,7 +1259,7 @@ assign T0 = ~( T0LATCH | T1XLATCH ) | ~( T1 | ( COMPLATCH2 & ~TRES2 ));
 assign nT0 = ~T0;
 assign T1 = ~T1LATCH;
 assign nT1X = ~T1XLATCH;
-assign n1_PC = ~( IPC[0] & ( IPC[1] | IPC[2] ));
+assign I_PC = IPC[0] & ( IPC[1] | IPC[2] );
 assign nREADYR = RDYDELAY1;
 // Логика
 always @(posedge Clk) begin
@@ -1627,7 +1627,7 @@ module PC (
 input Clk,               // Тактовый сигнал
 input PHI2,              // Такт PHI2
 // Входы
-input n1_PC,             // Входной перенос счетчика
+input I_PC,              // Входной перенос счетчика
 input PCL_PCL,           // Режим хранения данных в разрядах счетчика PCL
 input ADL_PCL,           // Загрузка данных из шины ADL
 input [7:0]ADL,          // Шина ADL
@@ -1642,17 +1642,17 @@ output reg [7:0]PCH      // Выход старших 8 битов PC
 reg [7:0]PCLS, PCHS;     // Промежуточные регистры
 // Комбинаторика
 wire [7:0]ADL_COUT, ADH_COUT;
-assign ADL_COUT[7:0] = PCLS[7:0] & {ADL_COUT[6:0], ~n1_PC};
+assign ADL_COUT[7:0] = PCLS[7:0] & {ADL_COUT[6:0], I_PC};
 assign ADH_COUT[7:0] = PCHS[7:0] & {ADH_COUT[6:4], PCH_03, ADH_COUT[2:0], PCH_IN};
 wire PCH_IN, PCH_03;
-assign PCH_IN = PCLS[7] & PCLS[6] & PCLS[5] & PCLS[4] & PCLS[3] & PCLS[2] & PCLS[1] & PCLS[0] & ~n1_PC;
-assign PCH_03 = PCHS[3] & PCHS[2] & PCHS[1] & PCHS[0] & ~n1_PC & PCH_IN;
+assign PCH_IN = PCLS[7] & PCLS[6] & PCLS[5] & PCLS[4] & PCLS[3] & PCLS[2] & PCLS[1] & PCLS[0] & I_PC;
+assign PCH_03 = PCHS[3] & PCHS[2] & PCHS[1] & PCHS[0] & I_PC & PCH_IN;
 // Логика
 always @(posedge Clk) begin
    if ( PCL_PCL | ADL_PCL ) PCLS[7:0] <= ( {8{ PCL_PCL }} & PCL[7:0] )|( {8{ ADL_PCL }} & ADL[7:0] );
    if ( PCH_PCH | ADH_PCH ) PCHS[7:0] <= ( {8{ PCH_PCH }} & PCH[7:0] )|( {8{ ADH_PCH }} & ADH[7:0] );
    if (PHI2) begin
-   PCL[7:0] <= ( PCLS[7:0] ^ {ADL_COUT[6:0], ~n1_PC} );
+   PCL[7:0] <= ( PCLS[7:0] ^ {ADL_COUT[6:0], I_PC} );
    PCH[7:0] <= ( PCHS[7:0] ^ {ADH_COUT[6:4], PCH_03, ADH_COUT[2:0], PCH_IN} );
               end
                       end
