@@ -121,7 +121,7 @@ wire ADD_SB7;               // ALU output bit 7 to SB bus
 wire ADD_SB06;              // ALU output bits 0-6 per SB bus
 wire ADD_ADL;               // ALU output to ADL bus
 wire nDSA;                  // Perform correction after subtraction
-wire n1_PC;                 // PC input carry
+wire I_PC;                  // PC input carry
 
 // Variables
 reg nNMIP, nIRQPR1, nIRQP, RESPR1, RESPR2;            //
@@ -281,7 +281,7 @@ ADD_SB7,
 ADD_SB06,
 ADD_ADL,
 nDSA,
-n1_PC
+I_PC
 );
 
 BUS_MUX MOD_BUS_MUX(
@@ -352,7 +352,7 @@ AVR
 PC MOD_PC(
 Clk,
 PHI2,
-n1_PC,
+I_PC,
 PCL_PCL,
 ADL_PCL,
 ADL[7:0],
@@ -655,7 +655,7 @@ output ADD_SB7,     // ALU output bit 7 to SB bus
 output ADD_SB06,    // ALU output bits 0-6 per SB bus
 output ADD_ADL,     // ALU output to ADL bus
 output nDSA,        // Perform correction after subtraction
-output n1_PC        // PC input carry
+output I_PC         // PC input carry
 );
 // Module connections
 wire BRK6E;
@@ -835,7 +835,7 @@ T1,
 nT0,
 T0,
 nT1X,
-n1_PC
+I_PC
 );
 
 // FLAGS module
@@ -1227,7 +1227,7 @@ output T1,           // Cycle  1
 output nT0,          // Cycle ~0
 output T0,           // Cycle  0
 output nT1X,         // Cycle ~T1X
-output n1_PC         // PC input carry
+output I_PC          // PC input carry
 );
 // Variables
 reg RDYDELAY1, RDYDELAY2, nREADY2, WRLATCH;
@@ -1260,7 +1260,7 @@ assign T0 = ~( T0LATCH | T1XLATCH ) | ~( T1 | ( COMPLATCH2 & ~TRES2 ));
 assign nT0 = ~T0;
 assign T1 = ~T1LATCH;
 assign nT1X = ~T1XLATCH;
-assign n1_PC = ~( IPC[0] & ( IPC[1] | IPC[2] ));
+assign I_PC = IPC[0] & ( IPC[1] | IPC[2] );
 assign nREADYR = RDYDELAY1;
 // Logics
 always @(posedge Clk) begin
@@ -1628,7 +1628,7 @@ module PC(
 input Clk,             // Clock
 input PHI2,            // phase PHI2
 // Inputs
-input n1_PC,           // Input counter carry
+input I_PC,           // Input counter carry
 input PCL_PCL,         // PCL counter bit storage mode
 input ADL_PCL,         // Loading data from the ADL bus
 input [7:0]ADL,        // ADL Bus
@@ -1643,17 +1643,17 @@ output reg [7:0]PCH    // Output of the MSB 8 bits of PC
 reg [7:0]PCLS, PCHS;   // PC Counter Intermediate Registers
 // Combinatorics
 wire [7:0]ADL_COUT, ADH_COUT;
-assign ADL_COUT[7:0] =  PCLS[7:0] & {ADL_COUT[6:0], ~n1_PC};
+assign ADL_COUT[7:0] =  PCLS[7:0] & {ADL_COUT[6:0], I_PC};
 assign ADH_COUT[7:0] =  PCHS[7:0] & {ADH_COUT[6:4], PCH_03, ADH_COUT[2:0], PCH_IN};
 wire PCH_IN, PCH_03;
-assign PCH_IN = PCLS[7] & PCLS[6] & PCLS[5] & PCLS[4] & PCLS[3] & PCLS[2] & PCLS[1] & PCLS[0] & ~n1_PC;
-assign PCH_03 = PCHS[3] & PCHS[2] & PCHS[1] & PCHS[0] & ~n1_PC & PCH_IN;
+assign PCH_IN = PCLS[7] & PCLS[6] & PCLS[5] & PCLS[4] & PCLS[3] & PCLS[2] & PCLS[1] & PCLS[0] & I_PC;
+assign PCH_03 = PCHS[3] & PCHS[2] & PCHS[1] & PCHS[0] & I_PC & PCH_IN;
 // Logics
 always @(posedge Clk) begin
        if ( PCL_PCL | ADL_PCL ) PCLS[7:0] <= ( {8{ PCL_PCL }} & PCL[7:0] )|( {8{ ADL_PCL }} & ADL[7:0] );
        if ( PCH_PCH | ADH_PCH ) PCHS[7:0] <= ( {8{ PCH_PCH }} & PCH[7:0] )|( {8{ ADH_PCH }} & ADH[7:0] );
        if (PHI2) begin
-       PCL[7:0] <= ( PCLS[7:0] ^ {ADL_COUT[6:0], ~n1_PC} );
+       PCL[7:0] <= ( PCLS[7:0] ^ {ADL_COUT[6:0], I_PC} );
        PCH[7:0] <= ( PCHS[7:0] ^ {ADH_COUT[6:4], PCH_03, ADH_COUT[2:0], PCH_IN} );
                  end
                       end
