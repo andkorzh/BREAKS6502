@@ -386,7 +386,7 @@ output reg [7:0]IR       // Выход регистра инструкций
 wire Z_IR;
 wire [7:0]PD;
 assign Z_IR = ~( ~T1_LATCH | nREADY ) & B_OUT;
-assign PD[7:0]   =  DL_LATCH[7:0] & { 8 { ~Z_IR }};
+assign PD[7:0]   =  DL_LATCH[7:0] & { 8 { Z_IR }};
 assign IMPLIED   = ~( PD[0] | PD[2] | ~PD[3] );
 assign nTWOCYCLE = ~(( IMPLIED & ( PD[1] | PD[4] | PD[7] )) | ~( ~PD[0] | PD[2] | ~PD[3] | PD[4] ) | ~( PD[0] | PD[2] | PD[3] | PD[4] | ~PD[7] ));
 // Логика
