@@ -276,10 +276,10 @@ SRS,
 EORS,
 SUMS,
 ACIN,
-nDAA,
 ADD_SB7,
 ADD_SB06,
 ADD_ADL,
+nDAA,
 nDSA,
 I_PC
 );
@@ -649,10 +649,10 @@ output SRS,        // Сдвиг вправо
 output EORS,       // Исключающее ИЛИ
 output SUMS,       // Сумма А и В
 output ACIN,       // Входной перенос АЛУ
-output nDAA,       // Выполнить коррекцию после сложения
 output ADD_SB7,    // Бит    7 на шину SB
 output ADD_SB06,   // Биты 0-6 на шину SB
 output ADD_ADL,    // Выход АЛУ на шину ADL
+output nDAA,       // Выполнить коррекцию после сложения
 output nDSA,       // Выполнить коррекцию после вычитания
 output I_PC        // Входной перенос PC
 );
